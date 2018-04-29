@@ -1,0 +1,120 @@
+#welcomePage {
+	position: relative;
+	display: block;
+	background-color: #DDD;
+	h1 {
+		background-image: url('../images/headers/h1_intro.png');
+		padding-top: 34.9%;
+	}
+	h3 {
+		color: $defaultTertiary;
+		margin: 0px 0 15px 0;
+	}
+	p {
+		color: $defaultText;
+	}
+	a {
+		color: $defaultTertiary;
+	}
+	a:hover {
+		color: $defaultSecondary;
+	}
+	a.button {
+		background-image: url('../images/buttons/button_intro_normal.png');
+	}
+	a.button:hover {
+		background-image: url('../images/buttons/button_intro_rollover.png');
+	}
+	#welcomeContent {
+		position: absolute;
+		display: block;
+		top: 0;
+		bottom: auto;
+		left: 0;
+		#welcomeIntroduction {
+			background: radial-gradient(rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 70%);
+		}
+		#WelcomePage_flyingPteradon {
+			background-image: url('../images/illustrations/welcome/bgIllustrations_welcome_flyingPteradon.png');
+			height: 20%;
+			left: 0;
+			width: 100%;
+			top: 0;
+			background-position: bottom left;
+			@media screen and (max-width: $break-small) {
+				display: none;
+			}
+		}
+		#WelcomePage_clouds {
+			background-image: url('../images/illustrations/welcome/bgIllustrations_welcome_clouds.png');
+			bottom: 0%;
+			left: 0;
+			width: 100%;
+			top: 0;
+			background-size: auto 100%;
+			background-position: bottom center;
+			background-repeat: repeat-x;
+		}
+		#WelcomePage_background {
+			background-image: url('../images/illustrations/welcome/bgIllustrations_welcome_background.png');
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			top: 0;
+			background-size: 40% auto;
+			background-position: bottom center;
+			background-repeat: repeat-x;
+		}
+		#WelcomePage_midground {
+			background-image: url('../images/illustrations/welcome/bgIllustrations_welcome_midground.png');
+			top: 0;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			background-position: bottom center;
+			background-repeat: repeat-x;
+		}
+		#WelcomePage_leftTreetop {
+			background-image: url('../images/illustrations/welcome/bgIllustrations_welcome_leftTreetopForeground.png');
+			top: 0;
+			bottom: 0;
+			left: 0;
+			@include percentMaxSize(.51);
+			background-position: bottom right;
+			@media screen and (max-width: $break-small) {
+				@include percentMaxSize(.55);
+			}
+		}
+		#WelcomePage_rightTreetop {
+			background-image: url('../images/illustrations/welcome/bgIllustrations_welcome_rightTreetopForeground.png');
+			top: 0;
+			bottom: 0;
+			right: 0;
+			@include percentMaxSize(.51);
+			background-position: bottom left;
+			@media screen and (max-width: $break-small) {
+				@include percentMaxSize(.55);
+			}
+		}
+		#WelcomePage_treetopPattern {
+			background-image: url('../images/illustrations/welcome/bgIllustrations_welcome_treePattern.png');
+			top: 85%;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			background-position: bottom center;
+			background-repeat: repeat-x;
+			background-size: auto 100%;
+		}
+	}
+	#welcomeContent.transitionState {
+		position: fixed;
+		top: auto;
+		bottom: 0;
+	}
+	#welcomeContent.completedState {
+		position: absolute;
+		top: auto;
+		bottom: 0;
+	}
+}

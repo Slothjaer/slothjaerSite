@@ -1,0 +1,14 @@
+{
+  "name": "slothjaer",
+  "version": "1.0.0",
+  "description": "Web Site of Jim Lawler",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Slothjaer/slothjaerSite.git"
+  },
+  "author": "Jim Lawler",
+  "bugs": {
+    "url": "https://github.com/Slothjaer/slothjaerSite/issues"
+  },
+  "homepage": "https://github.com/Slothjaer/slothjaerSite#readme"
+}

@@ -1,0 +1,939 @@
+#professionalPage {
+	background-color: #ccc;
+	h1 {
+		background-image: url('../images/headers/h1_professional.png');
+		padding-top: 46.5%;
+	}
+	h2 {
+		color: $professionalSecondary;
+	}
+	h3 {
+		color: $professionalTertiary;
+		margin: 0 0 5px 0;
+	}
+	a {
+		color: $professionalTertiary;
+	}
+	a:hover {
+		color: $professionalSecondary;
+	}
+	a.button {
+		background-image: url('../images/buttons/button_professional_normal.png');
+	}
+	a.button:hover {
+		background-image: url('../images/buttons/button_professional_rollover.png');
+	}
+	.blockContent {
+		background: linear-gradient(-45deg, $professionalSecondary, $professionalPrimary);
+	}
+	#gotProject {
+		
+	}
+	#gotProject {
+		.keyArtBase {
+			background-image: url('../images/projectKeyArt/projectKeyArt_GOT_base.jpg');
+		}
+		.keyArtCutOut {
+			background-image: url('../images/projectKeyArt/projectKeyArt_GOT_cutOut.png');
+		}
+		h2 {
+			background-image: url('../images/projectKeyArt/projectKeyArt_GOT_logo.png');
+		}
+	}
+	#lotroProject {
+		.keyArtBase {
+			background-image: url('../images/projectKeyArt/projectKeyArt_LOTRO_base.jpg');
+		}
+		.keyArtCutOut {
+			background-image: url('../images/projectKeyArt/projectKeyArt_LOTRO_cutOut.png');
+		}
+		h2 {
+			background-image: url('../images/projectKeyArt/projectKeyArt_LOTRO_logo.png');
+		}
+	}
+	#ddoProject {
+		.keyArtBase {
+			background-image: url('../images/projectKeyArt/projectKeyArt_DDO_base.jpg');
+		}
+		.keyArtCutOut {
+			background-image: url('../images/projectKeyArt/projectKeyArt_DDO_cutOut.png');
+		}
+		h2 {
+			background-image: url('../images/projectKeyArt/projectKeyArt_DDO_logo.png');
+		}
+	}
+	#icProject {
+		z-index: 40;
+		.keyArtBase {
+			background-image: url('../images/projectKeyArt/projectKeyArt_IC_base.jpg');
+		}
+		.keyArtCutOut {
+			background-image: url('../images/projectKeyArt/projectKeyArt_IC_cutOut.png');
+		}
+		h2 {
+			background-image: url('../images/projectKeyArt/projectKeyArt_IC_logo.png');
+		}
+		
+	}
+	.introduction {
+		background: linear-gradient(0deg, #858585, #999);
+		#professionalIntroductionAnchor {
+			position: absolute;
+			top: 0%;
+		}
+	}
+	.project {
+		display: block;
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 150%;
+		transform: translate(0, -50%);
+		@media screen and (max-width: $break-small) {
+			z-index: 50;
+		}
+		.projectContent.projectIntroduction {
+			padding: 40% 30px 20px 30px;
+			p {
+				transition: all .5s linear .5s;
+				padding-top: 30px;
+				opacity: 0;
+			}
+			h2 {
+				position: absolute;
+				top: 23%;
+				bottom: 53%;
+				left: 20%;
+				right: 20%;
+				background-position: bottom center;
+				background-size: contain;
+				background-repeat: no-repeat;
+				transition: all .5s linear;
+				span {
+					display: none;
+				}
+			}
+		}
+		.projectContent {
+			a.button {
+				position: absolute;
+				transform: translate(-50%, 0);
+				left: 50%;
+				bottom: -55px;
+				.buttonIcon {
+					background-image: url('../images/buttons/button_icon_arrow_right.png');
+				}
+			}
+			a.button:hover {
+				transform: translate(-49%, 5%);
+				.buttonIcon {
+					animation: buttonProjectBounce 1.5s;
+				}
+			}
+			@keyframes buttonProjectBounce {
+				0%, 20%, 100%   { 
+				  transform: translate(0, 0);
+				}
+				40%, 80% { 
+				  transform: translate(4px, 0);
+				}
+				60% { 
+				  transform: translate(-4px, 0);
+				}
+			}
+			.sideButton {
+				position: absolute;
+				display: block;
+				width: 65px;
+				z-index: 100;
+				@media screen and (max-width: $break-small) {
+					width: 50px;
+				}
+				div {
+					position: absolute;
+					display: block;
+					background-size: 100% 100%;
+				}
+				.backing {
+					width: 28px;
+					background-image: url('../images/buttons/button_sideButton_professional_backing.png');
+					transition: all .35s;
+				}
+				.sideButtonMain {
+					left: 0;
+					right: 0;
+					transition: all .35s, background-image 2s;
+					.arrow {
+						top: 50%;
+						height: 20px;
+						width: 10px;
+						transform: translate(-50%, -50%);
+					}
+				}
+			}
+			.rightButton {
+				right: -50px;
+				top: 35%;
+				bottom: 30%;
+				@media screen and (max-width: $break-small) {
+					right: -35px;
+				}
+				.backing {
+					right: 0px;
+					bottom: 0;
+					height: 27px;
+				}
+				.sideButtonMain {
+					top: 0;
+					bottom: 15px;
+					background-image: url('../images/buttons/button_rightsideButton_professional_normal.png');
+					.arrow {
+						left: 60%;
+						background-image: url('../images/buttons/button_icon_arrow_right.png');
+					}
+				}
+			}
+			.rightButton:hover {
+				.backing {
+					right: 5px;
+					bottom: 0;
+					height: 17px;
+					width: 24px;
+				}
+				.sideButtonMain {
+					top: 5px;
+					bottom: 10px;
+					left: -5px;
+					right: 5px;
+					.arrow {
+						animation: rightButtonBounce 1.5s;
+					}
+				}
+			}
+			@keyframes rightButtonBounce {
+				0%, 20%, 100%   { 
+				  left: 60%;
+				}
+				40%, 80% { 
+				  left: 65%;
+				}
+				60% { 
+				  left: 55%;
+				}
+			}
+			.leftButton {
+				left: -50px;
+				bottom: 35%;
+				top: 30%;
+				@media screen and (max-width: $break-small) {
+					left: -35px;
+				}
+				.backing {
+					left: 0px;
+					top: 0;
+					height: 20px;
+					transform: scale(-1, -1)
+				}
+				.sideButtonMain {
+					bottom: 0;
+					top: 15px;
+					background-image: url('../images/buttons/button_leftsideButton_professional_normal.png');
+					.arrow {
+						left: 40%;
+						background-image: url('../images/buttons/button_icon_arrow_left.png');
+					}
+				}
+			}
+			.leftButton:hover {
+				.backing {
+					left: 5px;
+					height: 25px;
+					width: 23px;
+				}
+				.sideButtonMain {
+					bottom: -5px;
+					top: 20px;
+					right: -5px;
+					left: 5px;
+					.arrow {
+						animation: leftButtonBounce 1.5s;
+					}
+				}
+			}
+			@keyframes leftButtonBounce {
+				0%, 20%, 100%   { 
+				  left: 40%;
+				}
+				40%, 80% { 
+				  left: 35%;
+				}
+				60% { 
+				  left: 45%;
+				}
+			}
+			.divLine {
+				display: block;
+				position: absolute;
+				bottom: 62%;
+				top: 34%;
+				left: 0;
+				right: 0;
+				background-size: 100% 100%;
+				transition: all .5s ease-out;
+				background-image: url('../images/projectKeyArt/projectKeyArt_divider.png');
+			}
+			.keyArtWrapper {
+				display: block;
+				position: absolute;
+				bottom: 65%;
+				left: 0;
+				right: 0;
+				overflow: hidden;
+				transition: all .5s ease-out;
+				.keyArt {
+					display: block;
+					position: absolute;
+					transition: all .75s, left 1.5s, right 1.5s;
+					background-position: top center;
+					background-size: 100% auto;
+					left: -20%;
+					right: -20%;
+					bottom: 0;
+				}
+			}
+			.keyArtBaseWrapper {
+				top: 0;
+				.keyArtBase {
+					top: 0;
+				}
+			}
+			.keyArtCutOutWrapper {
+				top: -20%;
+				.keyArtCutOut {
+					top: 36%;
+				}
+			}	
+			.gallery {
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 15%;
+				background-color: black;
+				overflow: hidden;
+				transition: all .75s .85s;
+				z-index: 100;
+				.galleryImage {
+					position: absolute;
+					display: block;
+					top: -5%;
+					padding-top: 95%;
+					left: -5%;
+					right: -5%;
+					background-repeat: no-repeat;
+					background-size: cover;
+					background-position: center center;
+					transition: all 1.5s;
+					opacity: 0;
+				}
+				.galleryImage.active {
+					opacity: 1;
+				}
+				.galleryUI {
+					position: absolute;
+					display: block;
+					top: 0;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					opacity: 0;
+					transition: opacity 1s .25s;
+					.openNewWindowButton {
+						position: absolute;
+						display: block;
+						top: 40%;
+						left: 50%;
+						width: 35%;
+						padding-top: 35%;
+						transform: translate(-50%, -50%);
+						background-image: url('../images/buttons/button_icon_openNewWindow.png');
+						background-repeat: no-repeat;
+						background-position: left;
+						background-size: 500% 100%;
+						pointer-events: none;
+						transition: width 1s .25s, padding-top 1s .25s;
+						animation: windowIconCloseTransition .2s steps(4);
+					}
+					.openNewWindowButton:hover {
+						background-position: 100% 0;
+						animation: windowIconOpenTransition .2s steps(4);
+					}
+					.indexMenu {
+						position: absolute;
+						display: block;
+						bottom: 10%;
+						left: 0;
+						right: 0;
+						text-align: center;
+						.indexMenuItem {
+							display: inline-block;
+							padding: 5px 8px;
+							margin: 0 5px;
+							font-size: 2em;
+							color: #AAA;
+						}
+						.indexMenuItem:hover {
+							animation: offsetBounce 1s;
+							color: #FFF;
+						}
+						.indexMenuItem.active {
+							background-color: $professionalPrimary;
+							pointer-events: none;
+							color: #FFF;
+						}
+					}
+				}
+			}
+			.gallery.hoverState {
+				.galleryImage.active {
+					top: 0;
+					padding-top: 85%;
+					left: 0;
+					right: 0;
+					opacity: .6;
+				}
+				.galleryUI {
+					opacity: 1;
+					.openNewWindowButton {
+						width: 20%;
+						padding-top: 20%;
+						pointer-events: all;
+					}
+				}
+			}
+			.titleSpace {
+				display: block;
+				position: absolute;
+				top: 85%;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				padding: 0 25px;
+				transition: all .65s ease-in .25s;
+				h3 {
+					position: absolute;
+					top: 50%;
+					transform: translate(0, -50%);
+				}
+				a.textToggle {
+					display: block;
+					position: absolute;
+					top: 10px;
+					bottom: 10px;
+					right: 10px;
+					width: 12%;
+					transition: all .35s;
+					background-size: contain;
+					background-position: center center;
+					background-repeat: no-repeat;
+					z-index: 100;
+					background-image: url('../images/buttons/button_square_professional_normal.png');
+					.textToggleIcon {
+						display: block;
+						position: absolute;
+						left: 10%;
+						right: 10%;
+						top: 10%;
+						//background-color: black;
+						padding-top: 80%;
+						background-size: auto 100%;
+						background-position: left;
+						background-repeat: no-repeat;
+						background-image: url('../images/buttons/button_icon_arrow_to_info.png');
+						animation: closeTitleTransition 2s steps(48);
+					}
+				}
+				a.textToggle:hover {
+					transform: translate(3px, 3px);
+				}
+			}
+			.descriptiveText {
+				display: block;
+				position: absolute;
+				left: 10px;
+				right: 10px;
+				top: 10%;
+				bottom: 10px;
+				padding: 35px;
+				opacity: 0;
+				transition: all .75s 0s;
+			}
+		}
+		.projectContent.textView {
+			.gallery {
+				bottom: 100%;
+				transition: all .75s 0s;
+				.galleryImage.active, .galleryImage {
+					opacity: .1;
+					left: -35%;
+					right: -35%;
+					transition: all 1s 0s;
+				}
+			}
+			.titleSpace {
+				top: 0;
+				bottom: 85%;
+				a.textToggle {
+					.textToggleIcon {
+						background-position: 98% 0;
+						animation: openTitleTransition 2s steps(48);
+					}
+				}
+			}
+			.descriptiveText {
+				opacity: 1;
+				transition: all .75s 1.3s;
+			}
+		}
+		
+	}
+	.project.focused {
+		.blockWrapper.active {
+			.projectIntroduction {
+				p {
+					padding-top: 0px;
+					opacity: 1;
+				}
+				h2 {
+					top: 14%;
+					bottom: 55%;
+					left: 10%;
+					right: 10%;
+				}
+			}
+			.divLine {
+				bottom: 55%;
+				top: 30%;
+			}
+			.projectContent {
+				.keyArtWrapper {
+					.keyArt {
+						left: 0;
+						right: 0;
+					}
+				}
+				.keyArtBaseWrapper {
+					.keyArtBase {
+						top: -58%;
+					}
+				}
+				.keyArtCutOutWrapper {
+					.keyArtCutOut {
+						top: 0;
+					}
+				}
+			}
+		}
+	}
+	#professionalForgroundImages {
+		display: block;
+		position: relative;
+		width: 100%;
+		margin: auto;
+		padding-top: 3600px;
+		overflow: hidden;
+		pointer-events: none;
+		@media screen and (max-width: $break-large) {
+			padding-top: 300%;
+		}
+		@media screen and (max-width: $break-small) {
+			width: 130%;
+			left: -15%;
+			padding-top: 450%;
+		}
+	}
+	
+	#profesionalPage_background {
+		background-image: url('../images/illustrations/professional/bgIllustrations_professional_background.png');
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 50%;
+		padding-top: 5%;
+		background-position: left top 2%;
+		background-size: auto 98%;
+		background-repeat: repeat-x;
+	}
+	#treetopBuffer {
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 3%;
+		background-color: #858585;
+		@media screen and (max-width: $break-small) {
+			height: 13%;
+		}
+	}
+	#profesionalPage_rightTree {
+		background-image: url('../images/illustrations/professional/bgIllustrations_professional_rightTree.png');
+		top: 3%;
+		right: 0;
+		@include percentMaxSize(.6);
+		@media screen and (max-width: $break-small) {
+			top: 13%;
+		}
+	}
+	#profesionalPage_leftTree {
+		background-image: url('../images/illustrations/professional/bgIllustrations_professional_leftTree.png');
+		top: 3%;
+		left: 0;
+		@include percentMaxSize(.55);
+		@media screen and (max-width: $break-small) {
+			top: 13%;
+		}
+	}
+	#profesionalPage_feedingSloth {
+		background-image: url('../images/illustrations/professional/bgIllustrations_professional_feedingSloth.png');
+		top: 45.75%;
+		right: 0;
+		@include percentMaxSize(.43);
+		
+		@media screen and (max-width: $break-small) {
+			top: 50%;
+		}
+	}
+	#profesionalPage_brachiosaurus {
+		background-image: url('../images/illustrations/professional/bgIllustrations_professional_bracciasaurus.png');
+		top: 44%;
+		left: 0;
+		@include percentMaxSize(.31);
+		z-index: 10;
+		@media screen and (max-width: $break-small) {
+			top: 45%;
+			left: 5%;
+		}
+	}
+	#profesionalPage_horizonGround {
+		background-image: url('../images/illustrations/professional/bgIllustrations_professional_horizonGround.png');
+		top: 65%;
+		left: 0;
+		width: 100%;
+		@media screen and (min-width: $break-large) {
+			background-repeat: repeat-x;
+			background-size: $break-large auto;	
+		}
+		@media screen and (max-width: $break-small) {
+			top: 62%;
+		}
+	}
+	#profesionalPage_ground {
+		background-color: #919191;
+		top: 70%;
+		left: 0;
+		width: 100%;
+		@media screen and (max-width: $break-small) {
+			top: 67%;
+		}
+	}
+	#profesionalPage_raptor {
+		background-image: url('../images/illustrations/professional/bgIllustrations_professional_raptor.png');
+		top: 65%;
+		left: 0;
+		@include percentMaxSize(.45);
+		z-index: 30;
+		@media screen and (max-width: $break-small) {
+			top: 62%;
+		}
+	}
+	#profesionalPage_bgTree {
+		background-image: url('../images/illustrations/professional/bgIllustrations_professional_bgTree.png');
+		top: 0;
+		left: 0;
+		right: 0;
+		margin-left: auto; 
+		margin-right: auto; 
+		@include percentMaxSize(1);
+		@media screen and (max-width: $break-small) {
+			top: 5%;
+		}
+	}
+	#professionalPage_coveringBrush {
+		background-image: url('../images/illustrations/professional/bgIllustrations_professional_coveringBrush.png');
+		top: 0;
+		left: 50%;
+		bottom: 0;
+		width: 70%;
+		max-width: 1300px;
+		transform: translate(-50%, 0);
+		background-position: center bottom;
+		@media screen and (max-width: $break-small) {
+			width: 95%;
+		}
+	}
+	#professionalPage_treetopPattern {
+		background-image: url('../images/illustrations/professional/bgIllustrations_professional_treetopPattern.png');
+		bottom: 98%;
+		top: 3%;
+		right: 0;
+		left: 0;
+		background-position: bottom center;
+		background-repeat: repeat-x;
+		background-size: auto 100%;
+	}
+	#profesionalPage_divider {
+		background-image: url('../images/illustrations/professional/bgIllustrations_professional_transitionDivider.png');
+		height: 300px;
+		top: 100%;
+		right: 0;
+		left: 0;
+		background-position: bottom center;
+		background-repeat: repeat-x;
+		background-size: auto 100%;
+	}
+	.projectTargetArea {
+		position: absolute;
+		display: block;
+		left: 0;
+		right: 0;
+		height: 20%;
+		//background-color: rgba(0, 100, 200, .4);
+		@media screen and (max-width: $break-small) {
+			height: 22%;
+		}
+	}
+	#gotProject_targetArea {
+		top: 4%;
+		@media screen and (max-width: $break-small) {
+			top: 6%;
+		}
+	}
+	#lotroProject_targetArea {
+		top: 24%;
+	}
+	#ddoProject_targetArea {
+		top: 49%;
+	}
+	#icProject_targetArea {
+		top: 75%;
+	}
+}
+@keyframes openTitleTransition {
+   from { background-position:    0%; }
+	 to { background-position: 98%; }
+}
+@keyframes closeTitleTransition {
+   from { background-position: 98%; }
+	 to { background-position: 0%; }
+}
+@keyframes windowIconOpenTransition {
+   from { background-position: 0%; }
+	 to { background-position: 100%; }
+}
+@keyframes windowIconCloseTransition {
+   from { background-position: 100%; }
+	 to { background-position: 0%; }
+}
+@keyframes offsetBounce {
+	0%, 50%, 100%   { 
+	  transform: translate(0, 0);
+	}
+	75% { 
+	   transform: translate(0, -5%);
+	}
+	25% { 
+	   transform: translate(0, -10%);
+	}
+}
+#legendaryItems_image1 {
+	background-image: url(../images/projectScreenshots/legendaryitems/itemAdvancement_041708_expanded.jpg);
+}
+#legendaryItems_image2 {
+	background-image: url(../images/projectScreenshots/legendaryitems/itemAdvancement_red_042208.jpg);
+}
+#legendaryItems_image3 {
+	background-image: url(../images/projectScreenshots/legendaryitems/itemAdvancement_041708_expanded_small.jpg);
+}
+#legendaryItems_image4 {
+	background-image: url(../images/projectScreenshots/legendaryitems/IA_results_reforge.jpg);
+}
+#legendaryItems_image5 {
+	background-image: url(../images/projectScreenshots/legendaryitems/itemAdvancement_deconstruct.jpg);
+}
+#legendaryItems_image6 {
+	background-image: url(../images/projectScreenshots/legendaryitems/itemAdvancement_identify.jpg);
+}
+#legendaryItems_image7 {
+	background-image: url(../images/projectScreenshots/legendaryitems/itemAdvancement_emptySlot_050908.jpg);
+}
+#legendaryItems_image8 {
+	background-image: url(../images/projectScreenshots/legendaryitems/itemAdvancement_LegendTooltip.jpg);
+}
+#bonusPads_image1 {
+	background-image: url(../images/projectScreenshots/bonusPads/prof_ic_beacon_icons.jpg);
+}
+#bonusPads_image2 {
+	background-image: url(../images/projectScreenshots/bonusPads/bonusPad_emp.jpg);
+}
+#bonusPads_image3 {
+	background-image: url(../images/projectScreenshots/bonusPads/bonusPad_fireball.jpg);
+}
+#bonusPads_image4 {
+	background-image: url(../images/projectScreenshots/bonusPads/bonusPad_shield.jpg);
+}
+#bonusPads_image5 {
+	background-image: url(../images/projectScreenshots/bonusPads/bonusPad_speedboost.jpg);
+}
+#bonusPads_image6 {
+	background-image: url(../images/projectScreenshots/bonusPads/bonusPad_surveillancecamera.jpg);
+}
+#bonusPads_image7 {
+	background-image: url(../images/projectScreenshots/bonusPads/bonusPad_surveillancetower.jpg);
+}
+#ddoCharGen_image1 {
+	background-image: url(../images/projectScreenshots/ddoCharGen/prof_ddo_chargen.jpg);
+}
+#ddoCharGen_image2 {
+	background-image: url(../images/projectScreenshots/ddoCharGen/prof_ddo_chargen_class.jpg);
+}
+#ddoCharGen_image3 {
+	background-image: url(../images/projectScreenshots/ddoCharGen/prof_ddo_chargen_buildtemplate.jpg);
+}
+#ddoCharGen_image4 {
+	background-image: url(../images/projectScreenshots/ddoCharGen/prof_ddo_chargen_buildtemplate.jpg);
+}
+#ddoCharGen_image5 {
+	background-image: url(../images/projectScreenshots/ddoCharGen/prof_ddo_chargen_race.jpg);
+}
+#ddoCharGen_image6 {
+	background-image: url(../images/projectScreenshots/ddoCharGen/prof_ddo_chargen_cosmetic.jpg);
+}
+#icPlayerCard_image1 {
+	background-image: url(../images/projectScreenshots/icPlayerCard/ic_playercard_glbatman.jpg);
+	background-position: top left !important;
+}
+#icPlayerCard_image2 {
+	background-image: url(../images/projectScreenshots/icPlayerCard/ic_playercard_doomy.jpg);
+	background-position: top left !important;
+}
+#icPlayerCard_image3 {
+	background-image: url(../images/projectScreenshots/icPlayerCard/ic_playercard_ally_drone.jpg);
+	background-position: top left !important;
+}
+#icPlayerCard_image4 {
+	background-image: url(../images/projectScreenshots/icPlayerCard/ic_playercard_neutral_drone.jpg);
+	background-position: top left !important;
+}
+#traitsets_image1 {
+	background-image: url(../images/projectScreenshots/traitsets/traitSets_031208.jpg);
+}
+#traitsets_image2 {
+	background-image: url(../images/projectScreenshots/traitsets/traitSets_classTraits_031208.jpg);
+}
+#traitsets_image3 {
+	background-image: url(../images/projectScreenshots/traitsets/traitSets_legendaryTraits_061008.jpg);
+}
+#traitsets_image4 {
+	background-image: url(../images/projectScreenshots/traitsets/traitSets_panel_MTX_button.jpg);
+}
+#traitsets_image5 {
+	background-image: url(../images/projectScreenshots/traitsets/traitSets_raceTraits_061608.jpg);
+}
+#traitsets_image6 {
+	background-image: url(../images/projectScreenshots/traitsets/traitset_wireframe.jpg);
+}
+#traitsets_image7 {
+	background-image: url(../images/projectScreenshots/traitsets/traitSets_031208.jpg);
+}
+#housingsystem_image1 {
+	background-image: url(../images/projectScreenshots/housingsystem/characterSheet_housing.jpg);
+}
+#housingsystem_image2 {
+	background-image: url(../images/projectScreenshots/housingsystem/characterSheet_housing_permissions.jpg);
+}
+#housingsystem_image3 {
+	background-image: url(../images/projectScreenshots/housingsystem/housing_enterNeighborhood.jpg);
+}
+#housingsystem_image4 {
+	background-image: url(../images/projectScreenshots/housingsystem/housing_housingBroker.jpg);
+}
+#housingsystem_image5 {
+	background-image: url(../images/projectScreenshots/housingsystem/housing_management_maintenance_overdue.jpg);
+}
+#status_icons_image1 {
+	background-image: url(../images/projectScreenshots/status_icons/blind_icon.jpg);
+	background-position: bottom center !important;
+}
+#status_icons_image2 {
+	background-position: bottom center !important;
+	background-image: url(../images/projectScreenshots/status_icons/wound_icon.jpg);
+}
+#status_icons_image3 {
+	background-position: bottom center !important;
+	background-position: bottom center;background-image: url(../images/projectScreenshots/status_icons/fear_icon.jpg);
+}
+#status_icons_image4 {
+	background-position: bottom center !important;
+	background-image: url(../images/projectScreenshots/status_icons/silence_icon.jpg);
+}
+#status_icons_image5 {
+	background-position: bottom center !important;
+	background-image: url(../images/projectScreenshots/status_icons/taunt_icon.jpg);
+}
+#mapIcons_image1 {
+	background-image: url(../images/projectScreenshots/mapIcons/prof_ic_coastCity.jpg);
+}
+#mapIcons_image2 {
+	background-image: url(../images/projectScreenshots/mapIcons/prof_ic_gothamDivided.jpg);
+}
+#mapIcons_image3 {
+	background-image: url(../images/projectScreenshots/mapIcons/prof_ic_gothamHeights.jpg);
+}
+#ddoInventory_image1 {
+	background-image: url(../images/projectScreenshots/ddoInventory/prof_ddo_inventory.jpg);
+}
+#ddoInventory_image2 {
+	background-image: url(../images/projectScreenshots/ddoInventory/prof_ddo_inventory2.jpg);
+}
+#ddoLFG_image1 {
+	background-image: url(../images/projectScreenshots/ddoLFG/prof_ddo_social2.jpg);
+}
+#ddoLFG_image2 {
+	background-image: url(../images/projectScreenshots/ddoLFG/prof_ddo_social1.jpg);
+}
+#socialpanel_image1 {
+	background-image: url(../images/projectScreenshots/socialpanel/myFellowship_041008.jpg);
+}
+#socialpanel_image2 {
+	background-image: url(../images/projectScreenshots/socialpanel/fellowshipInvite.jpg);
+}
+#socialpanel_image3 {
+	background-image: url(../images/projectScreenshots/socialpanel/fellowshipInvite_recieved.jpg);
+}
+#socialpanel_image4 {
+	background-image: url(../images/projectScreenshots/socialpanel/LFFellowship_041008.jpg);
+}
+#cheflouienight_image1 {
+	background-image: url(../images/projectScreenshots/cheflouienight/per_chefLouieNight1.jpg);
+}
+#cheflouienight_image2 {
+	background-image: url(../images/projectScreenshots/cheflouienight/per_chefLouieNight2.jpg);
+}
+#cheflouienight_image3 {
+	background-image: url(../images/projectScreenshots/cheflouienight/per_chefLouieNight3.jpg);
+}
+#gotHUD_image1 {
+	background-image: url(../images/projectScreenshots/gotHUD/prof_got_hud_city.jpg);
+}
+#gotHUD_image2 {
+	background-image: url(../images/projectScreenshots/gotHUD/prof_got_hud_combat.jpg);
+}
+#gotHUD_image3 {
+	background-image: url(../images/projectScreenshots/gotHUD/prof_got_hud_warRoom.jpg);
+}
+#gotShrine_image1 {
+	background-image: url(../images/projectScreenshots/gotShrine/prof_got_shrine1.jpg);
+}
+#gotShrine_image2 {
+	background-image: url(../images/projectScreenshots/gotShrine/prof_got_shrine2.jpg);
+}
