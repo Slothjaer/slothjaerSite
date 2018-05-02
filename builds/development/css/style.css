@@ -1,0 +1,1359 @@
+@import url("https://fonts.googleapis.com/css?family=Arvo");
+@import url("https://fonts.googleapis.com/css?family=Oswald");
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h1 {
+  display: block;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  text-align: center;
+  width: 80%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+h1 span {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  h1 {
+    width: 90%;
+    margin-top: 50px;
+  }
+}
+
+h2 {
+  font-size: 3.5em;
+  line-height: normal;
+  margin: 10px auto 15px auto;
+  text-align: center;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 3em;
+  margin: 35px 0 15px 0;
+  line-height: 1em;
+  font-weight: 700;
+}
+
+body {
+  font-family: "Arvo", serif !important;
+  color: #fff;
+  margin: 0;
+  font-weight: 200;
+  font-size: 12pt;
+  line-height: 2em;
+}
+
+.contentBlock {
+  width: 100%;
+  margin: auto;
+  position: relative;
+}
+
+.introduction {
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+}
+
+a.button {
+  display: block;
+  width: 190px;
+  height: 66px;
+  padding: 0 78px 0 32px;
+  vertical-align: middle;
+  line-height: 66px;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff !important;
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  font-size: 18pt;
+  text-align: center;
+  transition: all .35s, background-image 2s;
+}
+a.button .buttonIcon {
+  display: block;
+  position: absolute;
+  right: 4%;
+  top: 0;
+  bottom: 0;
+  width: 21%;
+  background-repeat: no-repeat;
+  background-size: auto 40%;
+  background-position: center center;
+}
+
+a.button:hover {
+  transform: translate(3px, 3px);
+}
+
+.introductionText {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 60%;
+  max-width: 1200px;
+  bottom: auto;
+  margin: 0;
+  padding: 0;
+  transition: left 1.5s;
+}
+@media screen and (max-width: 600px) {
+  .introductionText {
+    width: 90%;
+  }
+}
+.introductionText a.button {
+  position: relative;
+  margin: 40px auto 0 auto;
+}
+.introductionText a.button .buttonIcon {
+  background-image: url(../images/buttons/button_icon_scrolldown.png);
+}
+.introductionText a.button:hover .buttonIcon {
+  animation: buttonArrowBounce 1.5s;
+}
+
+@keyframes buttonArrowBounce {
+  0%, 20%, 100% {
+    top: 0px;
+    bottom: 0px;
+  }
+  40%, 80% {
+    top: 4px;
+    bottom: -4px;
+  }
+  60% {
+    top: -4px;
+    bottom: 4px;
+  }
+}
+.blockWrapper {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  left: -70%;
+  transform: translate(-50%, 0);
+  margin: auto;
+  padding: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  outline: 1px solid white;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+  transition: left 1.5s;
+}
+.blockWrapper .blockContent {
+  position: absolute;
+  display: block;
+  top: 20px;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  padding: 30px;
+}
+@media screen and (max-width: 600px) {
+  .blockWrapper .blockContent {
+    top: 5px;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    padding: 15px;
+  }
+}
+
+.blockWrapper.active, .introduction .blockWrapper {
+  left: 50%;
+}
+
+.blockWrapper.active ~ .blockWrapper {
+  left: 170%;
+}
+
+.illustration {
+  display: block;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  position: top;
+  bottom: 0;
+  pointer-events: none;
+}
+
+#log {
+  position: fixed;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  right: 5px;
+  bottom: 5px;
+  width: 300px;
+  height: 100px;
+  z-index: 5000;
+}
+
+#welcomePage {
+  position: relative;
+  display: block;
+  background-color: #DDD;
+}
+#welcomePage h1 {
+  background-image: url("../images/headers/h1_intro.png");
+  padding-top: 34.9%;
+}
+#welcomePage h3 {
+  color: #f560a6;
+  margin: 0px 0 15px 0;
+}
+#welcomePage p {
+  color: #444;
+}
+#welcomePage a {
+  color: #f560a6;
+}
+#welcomePage a:hover {
+  color: #ffcc00;
+}
+#welcomePage a.button {
+  background-image: url("../images/buttons/button_intro_normal.png");
+}
+#welcomePage a.button:hover {
+  background-image: url("../images/buttons/button_intro_rollover.png");
+}
+#welcomePage #welcomeContent {
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: auto;
+  left: 0;
+}
+#welcomePage #welcomeContent #welcomeIntroduction {
+  background: radial-gradient(rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 70%);
+}
+#welcomePage #welcomeContent #WelcomePage_flyingPteradon {
+  background-image: url("../images/illustrations/welcome/bgIllustrations_welcome_flyingPteradon.png");
+  height: 20%;
+  left: 0;
+  width: 100%;
+  top: 0;
+  background-position: bottom left;
+}
+@media screen and (max-width: 600px) {
+  #welcomePage #welcomeContent #WelcomePage_flyingPteradon {
+    display: none;
+  }
+}
+#welcomePage #welcomeContent #WelcomePage_clouds {
+  background-image: url("../images/illustrations/welcome/bgIllustrations_welcome_clouds.png");
+  bottom: 0%;
+  left: 0;
+  width: 100%;
+  top: 0;
+  background-size: auto 100%;
+  background-position: bottom center;
+  background-repeat: repeat-x;
+}
+#welcomePage #welcomeContent #WelcomePage_background {
+  background-image: url("../images/illustrations/welcome/bgIllustrations_welcome_background.png");
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  top: 0;
+  background-size: 40% auto;
+  background-position: bottom center;
+  background-repeat: repeat-x;
+}
+#welcomePage #welcomeContent #WelcomePage_midground {
+  background-image: url("../images/illustrations/welcome/bgIllustrations_welcome_midground.png");
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-position: bottom center;
+  background-repeat: repeat-x;
+}
+#welcomePage #welcomeContent #WelcomePage_leftTreetop {
+  background-image: url("../images/illustrations/welcome/bgIllustrations_welcome_leftTreetopForeground.png");
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 51%;
+  max-width: 612px;
+  background-position: bottom right;
+}
+@media screen and (max-width: 600px) {
+  #welcomePage #welcomeContent #WelcomePage_leftTreetop {
+    width: 55%;
+    max-width: 660px;
+  }
+}
+#welcomePage #welcomeContent #WelcomePage_rightTreetop {
+  background-image: url("../images/illustrations/welcome/bgIllustrations_welcome_rightTreetopForeground.png");
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 51%;
+  max-width: 612px;
+  background-position: bottom left;
+}
+@media screen and (max-width: 600px) {
+  #welcomePage #welcomeContent #WelcomePage_rightTreetop {
+    width: 55%;
+    max-width: 660px;
+  }
+}
+#welcomePage #welcomeContent #WelcomePage_treetopPattern {
+  background-image: url("../images/illustrations/welcome/bgIllustrations_welcome_treePattern.png");
+  top: 85%;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-position: bottom center;
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+}
+#welcomePage #welcomeContent.transitionState {
+  position: fixed;
+  top: auto;
+  bottom: 0;
+}
+#welcomePage #welcomeContent.completedState {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+}
+
+#professionalPage {
+  background-color: #ccc;
+}
+#professionalPage h1 {
+  background-image: url("../images/headers/h1_professional.png");
+  padding-top: 46.5%;
+}
+#professionalPage h2 {
+  color: #ffa516;
+}
+#professionalPage h3 {
+  color: #65effc;
+  margin: 0 0 5px 0;
+}
+#professionalPage a {
+  color: #65effc;
+}
+#professionalPage a:hover {
+  color: #ffa516;
+}
+#professionalPage a.button {
+  background-image: url("../images/buttons/button_professional_normal.png");
+}
+#professionalPage a.button:hover {
+  background-image: url("../images/buttons/button_professional_rollover.png");
+}
+#professionalPage .blockContent {
+  background: linear-gradient(-45deg, #ffa516, #af1d4a);
+}
+#professionalPage #gotProject .keyArtBase {
+  background-image: url("../images/projectKeyArt/projectKeyArt_GOT_base.jpg");
+}
+#professionalPage #gotProject .keyArtCutOut {
+  background-image: url("../images/projectKeyArt/projectKeyArt_GOT_cutOut.png");
+}
+#professionalPage #gotProject h2 {
+  background-image: url("../images/projectKeyArt/projectKeyArt_GOT_logo.png");
+}
+#professionalPage #lotroProject .keyArtBase {
+  background-image: url("../images/projectKeyArt/projectKeyArt_LOTRO_base.jpg");
+}
+#professionalPage #lotroProject .keyArtCutOut {
+  background-image: url("../images/projectKeyArt/projectKeyArt_LOTRO_cutOut.png");
+}
+#professionalPage #lotroProject h2 {
+  background-image: url("../images/projectKeyArt/projectKeyArt_LOTRO_logo.png");
+}
+#professionalPage #ddoProject .keyArtBase {
+  background-image: url("../images/projectKeyArt/projectKeyArt_DDO_base.jpg");
+}
+#professionalPage #ddoProject .keyArtCutOut {
+  background-image: url("../images/projectKeyArt/projectKeyArt_DDO_cutOut.png");
+}
+#professionalPage #ddoProject h2 {
+  background-image: url("../images/projectKeyArt/projectKeyArt_DDO_logo.png");
+}
+#professionalPage #icProject {
+  z-index: 40;
+}
+#professionalPage #icProject .keyArtBase {
+  background-image: url("../images/projectKeyArt/projectKeyArt_IC_base.jpg");
+}
+#professionalPage #icProject .keyArtCutOut {
+  background-image: url("../images/projectKeyArt/projectKeyArt_IC_cutOut.png");
+}
+#professionalPage #icProject h2 {
+  background-image: url("../images/projectKeyArt/projectKeyArt_IC_logo.png");
+}
+#professionalPage .introduction {
+  background: linear-gradient(0deg, #858585, #999999);
+}
+#professionalPage .introduction #professionalIntroductionAnchor {
+  position: absolute;
+  top: 0%;
+}
+#professionalPage .project {
+  display: block;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 150%;
+  transform: translate(0, -50%);
+}
+@media screen and (max-width: 600px) {
+  #professionalPage .project {
+    z-index: 50;
+  }
+}
+#professionalPage .project .projectContent.projectIntroduction {
+  padding: 40% 30px 20px 30px;
+}
+#professionalPage .project .projectContent.projectIntroduction p {
+  transition: all .5s linear .5s;
+  padding-top: 30px;
+  opacity: 0;
+}
+#professionalPage .project .projectContent.projectIntroduction h2 {
+  position: absolute;
+  top: 23%;
+  bottom: 53%;
+  left: 20%;
+  right: 20%;
+  background-position: bottom center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: all .5s linear;
+}
+#professionalPage .project .projectContent.projectIntroduction h2 span {
+  display: none;
+}
+#professionalPage .project .projectContent a.button {
+  position: absolute;
+  transform: translate(-50%, 0);
+  left: 50%;
+  bottom: -55px;
+}
+#professionalPage .project .projectContent a.button .buttonIcon {
+  background-image: url("../images/buttons/button_icon_arrow_right.png");
+}
+#professionalPage .project .projectContent a.button:hover {
+  transform: translate(-49%, 5%);
+}
+#professionalPage .project .projectContent a.button:hover .buttonIcon {
+  animation: buttonProjectBounce 1.5s;
+}
+@keyframes buttonProjectBounce {
+  0%, 20%, 100% {
+    transform: translate(0, 0);
+  }
+  40%, 80% {
+    transform: translate(4px, 0);
+  }
+  60% {
+    transform: translate(-4px, 0);
+  }
+}
+#professionalPage .project .projectContent .sideButton {
+  position: absolute;
+  display: block;
+  width: 65px;
+  z-index: 100;
+}
+@media screen and (max-width: 600px) {
+  #professionalPage .project .projectContent .sideButton {
+    width: 50px;
+  }
+}
+#professionalPage .project .projectContent .sideButton div {
+  position: absolute;
+  display: block;
+  background-size: 100% 100%;
+}
+#professionalPage .project .projectContent .sideButton .backing {
+  width: 28px;
+  background-image: url("../images/buttons/button_sideButton_professional_backing.png");
+  transition: all .35s;
+}
+#professionalPage .project .projectContent .sideButton .sideButtonMain {
+  left: 0;
+  right: 0;
+  transition: all .35s, background-image 2s;
+}
+#professionalPage .project .projectContent .sideButton .sideButtonMain .arrow {
+  top: 50%;
+  height: 20px;
+  width: 10px;
+  transform: translate(-50%, -50%);
+}
+#professionalPage .project .projectContent .rightButton {
+  right: -50px;
+  top: 35%;
+  bottom: 30%;
+}
+@media screen and (max-width: 600px) {
+  #professionalPage .project .projectContent .rightButton {
+    right: -35px;
+  }
+}
+#professionalPage .project .projectContent .rightButton .backing {
+  right: 0px;
+  bottom: 0;
+  height: 27px;
+}
+#professionalPage .project .projectContent .rightButton .sideButtonMain {
+  top: 0;
+  bottom: 15px;
+  background-image: url("../images/buttons/button_rightsideButton_professional_normal.png");
+}
+#professionalPage .project .projectContent .rightButton .sideButtonMain .arrow {
+  left: 60%;
+  background-image: url("../images/buttons/button_icon_arrow_right.png");
+}
+#professionalPage .project .projectContent .rightButton:hover .backing {
+  right: 5px;
+  bottom: 0;
+  height: 17px;
+  width: 24px;
+}
+#professionalPage .project .projectContent .rightButton:hover .sideButtonMain {
+  top: 5px;
+  bottom: 10px;
+  left: -5px;
+  right: 5px;
+}
+#professionalPage .project .projectContent .rightButton:hover .sideButtonMain .arrow {
+  animation: rightButtonBounce 1.5s;
+}
+@keyframes rightButtonBounce {
+  0%, 20%, 100% {
+    left: 60%;
+  }
+  40%, 80% {
+    left: 65%;
+  }
+  60% {
+    left: 55%;
+  }
+}
+#professionalPage .project .projectContent .leftButton {
+  left: -50px;
+  bottom: 35%;
+  top: 30%;
+}
+@media screen and (max-width: 600px) {
+  #professionalPage .project .projectContent .leftButton {
+    left: -35px;
+  }
+}
+#professionalPage .project .projectContent .leftButton .backing {
+  left: 0px;
+  top: 0;
+  height: 20px;
+  transform: scale(-1, -1);
+}
+#professionalPage .project .projectContent .leftButton .sideButtonMain {
+  bottom: 0;
+  top: 15px;
+  background-image: url("../images/buttons/button_leftsideButton_professional_normal.png");
+}
+#professionalPage .project .projectContent .leftButton .sideButtonMain .arrow {
+  left: 40%;
+  background-image: url("../images/buttons/button_icon_arrow_left.png");
+}
+#professionalPage .project .projectContent .leftButton:hover .backing {
+  left: 5px;
+  height: 25px;
+  width: 23px;
+}
+#professionalPage .project .projectContent .leftButton:hover .sideButtonMain {
+  bottom: -5px;
+  top: 20px;
+  right: -5px;
+  left: 5px;
+}
+#professionalPage .project .projectContent .leftButton:hover .sideButtonMain .arrow {
+  animation: leftButtonBounce 1.5s;
+}
+@keyframes leftButtonBounce {
+  0%, 20%, 100% {
+    left: 40%;
+  }
+  40%, 80% {
+    left: 35%;
+  }
+  60% {
+    left: 45%;
+  }
+}
+#professionalPage .project .projectContent .divLine {
+  display: block;
+  position: absolute;
+  bottom: 62%;
+  top: 34%;
+  left: 0;
+  right: 0;
+  background-size: 100% 100%;
+  transition: all .5s ease-out;
+  background-image: url("../images/projectKeyArt/projectKeyArt_divider.png");
+}
+#professionalPage .project .projectContent .keyArtWrapper {
+  display: block;
+  position: absolute;
+  bottom: 65%;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  transition: all .5s ease-out;
+}
+#professionalPage .project .projectContent .keyArtWrapper .keyArt {
+  display: block;
+  position: absolute;
+  transition: all .75s, left 1.5s, right 1.5s;
+  background-position: top center;
+  background-size: 100% auto;
+  left: -20%;
+  right: -20%;
+  bottom: 0;
+}
+#professionalPage .project .projectContent .keyArtBaseWrapper {
+  top: 0;
+}
+#professionalPage .project .projectContent .keyArtBaseWrapper .keyArtBase {
+  top: 0;
+}
+#professionalPage .project .projectContent .keyArtCutOutWrapper {
+  top: -20%;
+}
+#professionalPage .project .projectContent .keyArtCutOutWrapper .keyArtCutOut {
+  top: 36%;
+}
+#professionalPage .project .projectContent .gallery {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 15%;
+  background-color: black;
+  overflow: hidden;
+  transition: all .75s .85s;
+  z-index: 100;
+}
+#professionalPage .project .projectContent .gallery .galleryImage {
+  position: absolute;
+  display: block;
+  top: -5%;
+  padding-top: 95%;
+  left: -5%;
+  right: -5%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  transition: all 1.5s;
+  opacity: 0;
+}
+#professionalPage .project .projectContent .gallery .galleryImage.active {
+  opacity: 1;
+}
+#professionalPage .project .projectContent .gallery .galleryUI {
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: opacity 1s .25s;
+}
+#professionalPage .project .projectContent .gallery .galleryUI .openNewWindowButton {
+  position: absolute;
+  display: block;
+  top: 40%;
+  left: 50%;
+  width: 35%;
+  padding-top: 35%;
+  transform: translate(-50%, -50%);
+  background-image: url("../images/buttons/button_icon_openNewWindow.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 500% 100%;
+  pointer-events: none;
+  transition: width 1s .25s, padding-top 1s .25s;
+  animation: windowIconCloseTransition 0.2s steps(4);
+}
+#professionalPage .project .projectContent .gallery .galleryUI .openNewWindowButton:hover {
+  background-position: 100% 0;
+  animation: windowIconOpenTransition 0.2s steps(4);
+}
+#professionalPage .project .projectContent .gallery .galleryUI .indexMenu {
+  position: absolute;
+  display: block;
+  bottom: 10%;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+#professionalPage .project .projectContent .gallery .galleryUI .indexMenu .indexMenuItem {
+  display: inline-block;
+  padding: 5px 8px;
+  margin: 0 5px;
+  font-size: 2em;
+  color: #AAA;
+}
+#professionalPage .project .projectContent .gallery .galleryUI .indexMenu .indexMenuItem:hover {
+  animation: offsetBounce 1s;
+  color: #FFF;
+}
+#professionalPage .project .projectContent .gallery .galleryUI .indexMenu .indexMenuItem.active {
+  background-color: #af1d4a;
+  pointer-events: none;
+  color: #FFF;
+}
+#professionalPage .project .projectContent .gallery.hoverState .galleryImage.active {
+  top: 0;
+  padding-top: 85%;
+  left: 0;
+  right: 0;
+  opacity: .6;
+}
+#professionalPage .project .projectContent .gallery.hoverState .galleryUI {
+  opacity: 1;
+}
+#professionalPage .project .projectContent .gallery.hoverState .galleryUI .openNewWindowButton {
+  width: 20%;
+  padding-top: 20%;
+  pointer-events: all;
+}
+#professionalPage .project .projectContent .titleSpace {
+  display: block;
+  position: absolute;
+  top: 85%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0 25px;
+  transition: all .65s ease-in .25s;
+}
+#professionalPage .project .projectContent .titleSpace h3 {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+#professionalPage .project .projectContent .titleSpace a.textToggle {
+  display: block;
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  right: 10px;
+  width: 12%;
+  transition: all .35s;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index: 100;
+  background-image: url("../images/buttons/button_square_professional_normal.png");
+}
+#professionalPage .project .projectContent .titleSpace a.textToggle .textToggleIcon {
+  display: block;
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  top: 10%;
+  padding-top: 80%;
+  background-size: auto 100%;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-image: url("../images/buttons/button_icon_arrow_to_info.png");
+  animation: closeTitleTransition 2s steps(48);
+}
+#professionalPage .project .projectContent .titleSpace a.textToggle:hover {
+  transform: translate(3px, 3px);
+}
+#professionalPage .project .projectContent .descriptiveText {
+  display: block;
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  top: 10%;
+  bottom: 10px;
+  padding: 35px;
+  opacity: 0;
+  transition: all .75s 0s;
+}
+#professionalPage .project .projectContent.textView .gallery {
+  bottom: 100%;
+  transition: all .75s 0s;
+}
+#professionalPage .project .projectContent.textView .gallery .galleryImage.active, #professionalPage .project .projectContent.textView .gallery .galleryImage {
+  opacity: .1;
+  left: -35%;
+  right: -35%;
+  transition: all 1s 0s;
+}
+#professionalPage .project .projectContent.textView .titleSpace {
+  top: 0;
+  bottom: 85%;
+}
+#professionalPage .project .projectContent.textView .titleSpace a.textToggle .textToggleIcon {
+  background-position: 98% 0;
+  animation: openTitleTransition 2s steps(48);
+}
+#professionalPage .project .projectContent.textView .descriptiveText {
+  opacity: 1;
+  transition: all .75s 1.3s;
+}
+#professionalPage .project.focused .blockWrapper.active .projectIntroduction p {
+  padding-top: 0px;
+  opacity: 1;
+}
+#professionalPage .project.focused .blockWrapper.active .projectIntroduction h2 {
+  top: 14%;
+  bottom: 55%;
+  left: 10%;
+  right: 10%;
+}
+#professionalPage .project.focused .blockWrapper.active .divLine {
+  bottom: 55%;
+  top: 30%;
+}
+#professionalPage .project.focused .blockWrapper.active .projectContent .keyArtWrapper .keyArt {
+  left: 0;
+  right: 0;
+}
+#professionalPage .project.focused .blockWrapper.active .projectContent .keyArtBaseWrapper .keyArtBase {
+  top: -58%;
+}
+#professionalPage .project.focused .blockWrapper.active .projectContent .keyArtCutOutWrapper .keyArtCutOut {
+  top: 0;
+}
+#professionalPage #professionalForgroundImages {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: auto;
+  padding-top: 3600px;
+  overflow: hidden;
+  pointer-events: none;
+}
+@media screen and (max-width: 1200px) {
+  #professionalPage #professionalForgroundImages {
+    padding-top: 300%;
+  }
+}
+@media screen and (max-width: 600px) {
+  #professionalPage #professionalForgroundImages {
+    width: 130%;
+    left: -15%;
+    padding-top: 450%;
+  }
+}
+#professionalPage #profesionalPage_background {
+  background-image: url("../images/illustrations/professional/bgIllustrations_professional_background.png");
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  padding-top: 5%;
+  background-position: left top 2%;
+  background-size: auto 98%;
+  background-repeat: repeat-x;
+}
+#professionalPage #treetopBuffer {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3%;
+  background-color: #858585;
+}
+@media screen and (max-width: 600px) {
+  #professionalPage #treetopBuffer {
+    height: 13%;
+  }
+}
+#professionalPage #profesionalPage_rightTree {
+  background-image: url("../images/illustrations/professional/bgIllustrations_professional_rightTree.png");
+  top: 3%;
+  right: 0;
+  width: 60%;
+  max-width: 720px;
+}
+@media screen and (max-width: 600px) {
+  #professionalPage #profesionalPage_rightTree {
+    top: 13%;
+  }
+}
+#professionalPage #profesionalPage_leftTree {
+  background-image: url("../images/illustrations/professional/bgIllustrations_professional_leftTree.png");
+  top: 3%;
+  left: 0;
+  width: 55%;
+  max-width: 660px;
+}
+@media screen and (max-width: 600px) {
+  #professionalPage #profesionalPage_leftTree {
+    top: 13%;
+  }
+}
+#professionalPage #profesionalPage_feedingSloth {
+  background-image: url("../images/illustrations/professional/bgIllustrations_professional_feedingSloth.png");
+  top: 45.75%;
+  right: 0;
+  width: 43%;
+  max-width: 516px;
+}
+@media screen and (max-width: 600px) {
+  #professionalPage #profesionalPage_feedingSloth {
+    top: 50%;
+  }
+}
+#professionalPage #profesionalPage_brachiosaurus {
+  background-image: url("../images/illustrations/professional/bgIllustrations_professional_bracciasaurus.png");
+  top: 44%;
+  left: 0;
+  width: 31%;
+  max-width: 372px;
+  z-index: 10;
+}
+@media screen and (max-width: 600px) {
+  #professionalPage #profesionalPage_brachiosaurus {
+    top: 45%;
+    left: 5%;
+  }
+}
+#professionalPage #profesionalPage_horizonGround {
+  background-image: url("../images/illustrations/professional/bgIllustrations_professional_horizonGround.png");
+  top: 65%;
+  left: 0;
+  width: 100%;
+}
+@media screen and (min-width: 1200px) {
+  #professionalPage #profesionalPage_horizonGround {
+    background-repeat: repeat-x;
+    background-size: 1200px auto;
+  }
+}
+@media screen and (max-width: 600px) {
+  #professionalPage #profesionalPage_horizonGround {
+    top: 62%;
+  }
+}
+#professionalPage #profesionalPage_ground {
+  background-color: #919191;
+  top: 70%;
+  left: 0;
+  width: 100%;
+}
+@media screen and (max-width: 600px) {
+  #professionalPage #profesionalPage_ground {
+    top: 67%;
+  }
+}
+#professionalPage #profesionalPage_raptor {
+  background-image: url("../images/illustrations/professional/bgIllustrations_professional_raptor.png");
+  top: 65%;
+  left: 0;
+  width: 45%;
+  max-width: 540px;
+  z-index: 30;
+}
+@media screen and (max-width: 600px) {
+  #professionalPage #profesionalPage_raptor {
+    top: 62%;
+  }
+}
+#professionalPage #profesionalPage_bgTree {
+  background-image: url("../images/illustrations/professional/bgIllustrations_professional_bgTree.png");
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 1200px;
+}
+@media screen and (max-width: 600px) {
+  #professionalPage #profesionalPage_bgTree {
+    top: 5%;
+  }
+}
+#professionalPage #professionalPage_coveringBrush {
+  background-image: url("../images/illustrations/professional/bgIllustrations_professional_coveringBrush.png");
+  top: 0;
+  left: 50%;
+  bottom: 0;
+  width: 70%;
+  max-width: 1300px;
+  transform: translate(-50%, 0);
+  background-position: center bottom;
+}
+@media screen and (max-width: 600px) {
+  #professionalPage #professionalPage_coveringBrush {
+    width: 95%;
+  }
+}
+#professionalPage #professionalPage_treetopPattern {
+  background-image: url("../images/illustrations/professional/bgIllustrations_professional_treetopPattern.png");
+  bottom: 98%;
+  top: 3%;
+  right: 0;
+  left: 0;
+  background-position: bottom center;
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+}
+#professionalPage #profesionalPage_divider {
+  background-image: url("../images/illustrations/professional/bgIllustrations_professional_transitionDivider.png");
+  height: 300px;
+  top: 100%;
+  right: 0;
+  left: 0;
+  background-position: bottom center;
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+}
+#professionalPage .projectTargetArea {
+  position: absolute;
+  display: block;
+  left: 0;
+  right: 0;
+  height: 20%;
+}
+@media screen and (max-width: 600px) {
+  #professionalPage .projectTargetArea {
+    height: 22%;
+  }
+}
+#professionalPage #gotProject_targetArea {
+  top: 4%;
+}
+@media screen and (max-width: 600px) {
+  #professionalPage #gotProject_targetArea {
+    top: 6%;
+  }
+}
+#professionalPage #lotroProject_targetArea {
+  top: 24%;
+}
+#professionalPage #ddoProject_targetArea {
+  top: 49%;
+}
+#professionalPage #icProject_targetArea {
+  top: 75%;
+}
+
+@keyframes openTitleTransition {
+  from {
+    background-position: 0%;
+  }
+  to {
+    background-position: 98%;
+  }
+}
+@keyframes closeTitleTransition {
+  from {
+    background-position: 98%;
+  }
+  to {
+    background-position: 0%;
+  }
+}
+@keyframes windowIconOpenTransition {
+  from {
+    background-position: 0%;
+  }
+  to {
+    background-position: 100%;
+  }
+}
+@keyframes windowIconCloseTransition {
+  from {
+    background-position: 100%;
+  }
+  to {
+    background-position: 0%;
+  }
+}
+@keyframes offsetBounce {
+  0%, 50%, 100% {
+    transform: translate(0, 0);
+  }
+  75% {
+    transform: translate(0, -5%);
+  }
+  25% {
+    transform: translate(0, -10%);
+  }
+}
+#legendaryItems_image1 {
+  background-image: url(../images/projectScreenshots/legendaryitems/itemAdvancement_041708_expanded.jpg);
+}
+
+#legendaryItems_image2 {
+  background-image: url(../images/projectScreenshots/legendaryitems/itemAdvancement_red_042208.jpg);
+}
+
+#legendaryItems_image3 {
+  background-image: url(../images/projectScreenshots/legendaryitems/itemAdvancement_041708_expanded_small.jpg);
+}
+
+#legendaryItems_image4 {
+  background-image: url(../images/projectScreenshots/legendaryitems/IA_results_reforge.jpg);
+}
+
+#legendaryItems_image5 {
+  background-image: url(../images/projectScreenshots/legendaryitems/itemAdvancement_deconstruct.jpg);
+}
+
+#legendaryItems_image6 {
+  background-image: url(../images/projectScreenshots/legendaryitems/itemAdvancement_identify.jpg);
+}
+
+#legendaryItems_image7 {
+  background-image: url(../images/projectScreenshots/legendaryitems/itemAdvancement_emptySlot_050908.jpg);
+}
+
+#legendaryItems_image8 {
+  background-image: url(../images/projectScreenshots/legendaryitems/itemAdvancement_LegendTooltip.jpg);
+}
+
+#bonusPads_image1 {
+  background-image: url(../images/projectScreenshots/bonusPads/prof_ic_beacon_icons.jpg);
+}
+
+#bonusPads_image2 {
+  background-image: url(../images/projectScreenshots/bonusPads/bonusPad_emp.jpg);
+}
+
+#bonusPads_image3 {
+  background-image: url(../images/projectScreenshots/bonusPads/bonusPad_fireball.jpg);
+}
+
+#bonusPads_image4 {
+  background-image: url(../images/projectScreenshots/bonusPads/bonusPad_shield.jpg);
+}
+
+#bonusPads_image5 {
+  background-image: url(../images/projectScreenshots/bonusPads/bonusPad_speedboost.jpg);
+}
+
+#bonusPads_image6 {
+  background-image: url(../images/projectScreenshots/bonusPads/bonusPad_surveillancecamera.jpg);
+}
+
+#bonusPads_image7 {
+  background-image: url(../images/projectScreenshots/bonusPads/bonusPad_surveillancetower.jpg);
+}
+
+#ddoCharGen_image1 {
+  background-image: url(../images/projectScreenshots/ddoCharGen/prof_ddo_chargen.jpg);
+}
+
+#ddoCharGen_image2 {
+  background-image: url(../images/projectScreenshots/ddoCharGen/prof_ddo_chargen_class.jpg);
+}
+
+#ddoCharGen_image3 {
+  background-image: url(../images/projectScreenshots/ddoCharGen/prof_ddo_chargen_buildtemplate.jpg);
+}
+
+#ddoCharGen_image4 {
+  background-image: url(../images/projectScreenshots/ddoCharGen/prof_ddo_chargen_buildtemplate.jpg);
+}
+
+#ddoCharGen_image5 {
+  background-image: url(../images/projectScreenshots/ddoCharGen/prof_ddo_chargen_race.jpg);
+}
+
+#ddoCharGen_image6 {
+  background-image: url(../images/projectScreenshots/ddoCharGen/prof_ddo_chargen_cosmetic.jpg);
+}
+
+#icPlayerCard_image1 {
+  background-image: url(../images/projectScreenshots/icPlayerCard/ic_playercard_glbatman.jpg);
+  background-position: top left !important;
+}
+
+#icPlayerCard_image2 {
+  background-image: url(../images/projectScreenshots/icPlayerCard/ic_playercard_doomy.jpg);
+  background-position: top left !important;
+}
+
+#icPlayerCard_image3 {
+  background-image: url(../images/projectScreenshots/icPlayerCard/ic_playercard_ally_drone.jpg);
+  background-position: top left !important;
+}
+
+#icPlayerCard_image4 {
+  background-image: url(../images/projectScreenshots/icPlayerCard/ic_playercard_neutral_drone.jpg);
+  background-position: top left !important;
+}
+
+#traitsets_image1 {
+  background-image: url(../images/projectScreenshots/traitsets/traitSets_031208.jpg);
+}
+
+#traitsets_image2 {
+  background-image: url(../images/projectScreenshots/traitsets/traitSets_classTraits_031208.jpg);
+}
+
+#traitsets_image3 {
+  background-image: url(../images/projectScreenshots/traitsets/traitSets_legendaryTraits_061008.jpg);
+}
+
+#traitsets_image4 {
+  background-image: url(../images/projectScreenshots/traitsets/traitSets_panel_MTX_button.jpg);
+}
+
+#traitsets_image5 {
+  background-image: url(../images/projectScreenshots/traitsets/traitSets_raceTraits_061608.jpg);
+}
+
+#traitsets_image6 {
+  background-image: url(../images/projectScreenshots/traitsets/traitset_wireframe.jpg);
+}
+
+#traitsets_image7 {
+  background-image: url(../images/projectScreenshots/traitsets/traitSets_031208.jpg);
+}
+
+#housingsystem_image1 {
+  background-image: url(../images/projectScreenshots/housingsystem/characterSheet_housing.jpg);
+}
+
+#housingsystem_image2 {
+  background-image: url(../images/projectScreenshots/housingsystem/characterSheet_housing_permissions.jpg);
+}
+
+#housingsystem_image3 {
+  background-image: url(../images/projectScreenshots/housingsystem/housing_enterNeighborhood.jpg);
+}
+
+#housingsystem_image4 {
+  background-image: url(../images/projectScreenshots/housingsystem/housing_housingBroker.jpg);
+}
+
+#housingsystem_image5 {
+  background-image: url(../images/projectScreenshots/housingsystem/housing_management_maintenance_overdue.jpg);
+}
+
+#status_icons_image1 {
+  background-image: url(../images/projectScreenshots/status_icons/blind_icon.jpg);
+  background-position: bottom center !important;
+}
+
+#status_icons_image2 {
+  background-position: bottom center !important;
+  background-image: url(../images/projectScreenshots/status_icons/wound_icon.jpg);
+}
+
+#status_icons_image3 {
+  background-position: bottom center !important;
+  background-position: bottom center;
+  background-image: url(../images/projectScreenshots/status_icons/fear_icon.jpg);
+}
+
+#status_icons_image4 {
+  background-position: bottom center !important;
+  background-image: url(../images/projectScreenshots/status_icons/silence_icon.jpg);
+}
+
+#status_icons_image5 {
+  background-position: bottom center !important;
+  background-image: url(../images/projectScreenshots/status_icons/taunt_icon.jpg);
+}
+
+#mapIcons_image1 {
+  background-image: url(../images/projectScreenshots/mapIcons/prof_ic_coastCity.jpg);
+}
+
+#mapIcons_image2 {
+  background-image: url(../images/projectScreenshots/mapIcons/prof_ic_gothamDivided.jpg);
+}
+
+#mapIcons_image3 {
+  background-image: url(../images/projectScreenshots/mapIcons/prof_ic_gothamHeights.jpg);
+}
+
+#ddoInventory_image1 {
+  background-image: url(../images/projectScreenshots/ddoInventory/prof_ddo_inventory.jpg);
+}
+
+#ddoInventory_image2 {
+  background-image: url(../images/projectScreenshots/ddoInventory/prof_ddo_inventory2.jpg);
+}
+
+#ddoLFG_image1 {
+  background-image: url(../images/projectScreenshots/ddoLFG/prof_ddo_social2.jpg);
+}
+
+#ddoLFG_image2 {
+  background-image: url(../images/projectScreenshots/ddoLFG/prof_ddo_social1.jpg);
+}
+
+#socialpanel_image1 {
+  background-image: url(../images/projectScreenshots/socialpanel/myFellowship_041008.jpg);
+}
+
+#socialpanel_image2 {
+  background-image: url(../images/projectScreenshots/socialpanel/fellowshipInvite.jpg);
+}
+
+#socialpanel_image3 {
+  background-image: url(../images/projectScreenshots/socialpanel/fellowshipInvite_recieved.jpg);
+}
+
+#socialpanel_image4 {
+  background-image: url(../images/projectScreenshots/socialpanel/LFFellowship_041008.jpg);
+}
+
+#cheflouienight_image1 {
+  background-image: url(../images/projectScreenshots/cheflouienight/per_chefLouieNight1.jpg);
+}
+
+#cheflouienight_image2 {
+  background-image: url(../images/projectScreenshots/cheflouienight/per_chefLouieNight2.jpg);
+}
+
+#cheflouienight_image3 {
+  background-image: url(../images/projectScreenshots/cheflouienight/per_chefLouieNight3.jpg);
+}
+
+#gotHUD_image1 {
+  background-image: url(../images/projectScreenshots/gotHUD/prof_got_hud_city.jpg);
+}
+
+#gotHUD_image2 {
+  background-image: url(../images/projectScreenshots/gotHUD/prof_got_hud_combat.jpg);
+}
+
+#gotHUD_image3 {
+  background-image: url(../images/projectScreenshots/gotHUD/prof_got_hud_warRoom.jpg);
+}
+
+#gotShrine_image1 {
+  background-image: url(../images/projectScreenshots/gotShrine/prof_got_shrine1.jpg);
+}
+
+#gotShrine_image2 {
+  background-image: url(../images/projectScreenshots/gotShrine/prof_got_shrine2.jpg);
+}
