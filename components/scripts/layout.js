@@ -12,7 +12,7 @@ $(window).resize(function() {
 });
 
 function sizePanelToSquare () {
-	if ($(window).width() < 450) {
+	if ($(window).width() < 460) {
 		var targetWidth = $(window).width() * .85;
 	} else if ($(window).width() < 600) {
 		var targetWidth = $(window).width() * .75;
