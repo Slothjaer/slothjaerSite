@@ -1,0 +1,58 @@
+#outro {
+	background-color: #333;
+	position: relative;
+	.social_logos {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		margin-left: 50px;
+		.socialLogoContainer {
+			display: block;
+			padding: 25px;
+			a {
+				display: block;
+				text-decoration: none;
+				.socialLogo {
+					height: 50px;
+					width: 50px;
+					margin: 0 auto 10px auto;
+					background-size: contain;
+					background-repeat: no-repeat;
+					background-position: center center;
+				}
+				h3 {
+					text-align: center;
+					color: #fff;
+					text-decoration: none;
+				}
+				p {
+					color: #eee;
+					text-decoration: none;
+				}
+			}
+		}
+		#emailLogo {
+			background-color: #444;
+			.socialLogo {
+				background-image: url('../images/socialLogos/mail_logo.png');
+			}
+		}
+		#linkedinLogo {
+			background-color: #555;
+			.socialLogo {
+				background-image: url('../images/socialLogos/linkedin_logo.png');
+			}
+		}
+		#facebookLogo {
+			background-color: #666;
+			.socialLogo {
+				background-image: url('../images/socialLogos/facebook_logo.png');
+			}
+		}
+		#resumeLogo {
+			background-color: #777;
+			.socialLogo {
+				background-image: url('../images/socialLogos/downloadPDF_logo.png');
+			}
+		}
+	}
+}

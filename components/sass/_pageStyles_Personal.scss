@@ -1,0 +1,540 @@
+#personal {
+	background-color: #cacaca;
+	h1 {
+		background-image: url('../images/headers/h1_personal.png');
+	}
+	h2 {
+		color: $personalSecondary;
+	}
+	h3 {
+		color: $personalTertiary;
+		margin: 0 0 5px 0;
+	}
+	a {
+		color: $personalTertiary;
+	}
+	a:hover {
+		color: $personalSecondary;
+	}
+	a.button {
+		background-image: url('../images/buttons/button_personal_normal.png');
+	}
+	a.button:hover {
+		background-image: url('../images/buttons/button_personal_rollover.png');
+	}
+	#personalIntrospace {
+		background: linear-gradient(-45deg, $personalSecondary, $personalPrimary);
+	}
+	#personalPortfolio {
+		.gridContainer {
+			position: fixed;
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+			grid-gap: 5px;
+			padding: 5px;
+			width: 87%;
+			left: 53%;
+			background-color: black;
+			@media screen and (orientation: portrait) {
+				grid-template-columns: 1fr 1fr 1fr;
+			}
+			@media screen and (max-width: $break-small) {
+				width: 90%;
+				left: 50%;
+			}
+			
+			.personalProject {
+				overflow: hidden;
+				position: relative;
+				padding-top: 100%;
+				.personalProjectThumbnail {
+					position: absolute;
+					left: 0;
+					right: 0;
+					top: 0;
+					bottom: 0;
+					display: block;
+					background-size: cover;
+					background-position: center center;
+					opacity: 1;
+					transition: all .25s;
+					
+				}
+				.title {
+					position: absolute;
+					display: block;
+					font-family: $headFont;
+					font-weight: 700;
+					text-transform: uppercase;
+					font-size: 2vw;
+					line-height: 1em;
+					margin: auto;
+					padding: 20px 10px;
+					top: 50%;
+					left: 50%;
+					transform: scale(1.1, 1.1) translate(-50%, -80%);
+					background: linear-gradient(-45deg, $personalSecondary, $personalPrimary);
+					text-align: center;
+					opacity: 0;
+					transition: all .5s;
+					color: $personalTertiary;
+					pointer-events: none;
+					@media screen and (orientation: portrait) {
+						font-size: 3vw;
+					}
+				}
+				.title.smallText {
+					font-size: 1.5vw;
+					@media screen and (orientation: portrait) {
+						font-size: 2vw;
+					}
+				}
+			}
+			.personalProject.largeImage {
+				grid-column-end: span 2;
+				grid-row-end: span 2;
+				.title{
+					font-size: 3.5vw;
+					@media screen and (orientation: portrait) {
+						font-size: 5vw;
+					}
+				}
+			}
+			.personalProject.tallImage {
+				grid-row-end: span 2;
+			}
+			.personalProject.longImage {
+				grid-column-end: span 2;
+				padding-top: 50%;
+			}
+			.personalProject:hover {
+				.personalProjectThumbnail {
+					left: -15%;
+					right: -15%;
+					top: -15%;
+					bottom: -15%;
+					opacity: .5;
+				}
+				.title {
+					transform: scale(1, 1) translate(-50%, -50%);
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+//Illustrations
+#personalPage_background {
+	background-image: url('../images/illustrations/personal/bgIllustrations_personal_background.png');
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 19%;
+	background-attachment: fixed;
+	background-repeat: repeat-x;
+	background-size: auto 200%;
+}
+#personalPage_background_water {
+	top: 81%;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: linear-gradient(0deg, #c3c3c3, #cacaca);
+	background-color: #c3c3c3;
+}
+#personalTopIntroTrim {
+	background-image: url('../images/illustrations/personal/bgIllustrations_professional_intro_rockPattern_top.png');
+	top: 0%;
+	height: 192px;
+	right: 0;
+	left: 0;
+	background-position: top center;
+	background-repeat: repeat-x;
+	background-size: contain;
+}
+#personalPage_divider {
+	background-image: url('../images/illustrations/personal/bgIllustrations_professional_intro_rockPattern_bottom.png');
+	height: 160px;
+	bottom: 0%;
+	right: 0;
+	left: 0;
+	background-position: bottom center;
+	background-repeat: repeat-x;
+	background-size: contain;
+}
+#personalPage_cliffCeiling {
+	background-image: url('../images/illustrations/personal/bgIllustrations_personal_caveCeiling.png');
+	top: 0;
+	bottom: 5%;
+	right: 0;
+	left: 0;
+	background-position: top center;
+	background-repeat: repeat-x;
+	background-size: contain;
+}
+#personalPage_electroSloths_cliff {
+	background-image: url('../images/illustrations/personal/bgIllustrations_personal_electroSloths_cliff.png');
+	top: 0;
+	left: 0;
+	@include percentAspectRatio(1, .96);
+	
+}
+#personalPage_rockPattern_left {
+	background-image: url('../images/illustrations/personal/bgIllustrations_personal_rockPattern.png');
+	top: 0;
+	bottom: 72%;
+	@include percentMaxSize(.12);
+	background-position: top left;
+	background-repeat: repeat-y;
+	background-size: 100% auto;
+}
+#personalPage_electroSloths {
+	background-image: url('../images/illustrations/personal/bgIllustrations_personal_electroSloths.png');
+	top: 21%;
+	left: 0;
+	@include percentAspectRatio(.5, 1.056);
+	@media screen and (max-width: $break-small) {
+		left: -15%;
+	}
+}
+#personalPage_trex {
+	background-image: url('../images/illustrations/personal/bgIllustrations_personal_t-rex.png');
+	top: 19.5%;
+	right: 0;
+	@include percentAspectRatio(1.05, 1.68);
+	@media screen and (max-width: $break-small) {
+		right: -30%;
+	}
+	
+}
+#personalPage_triceratops {
+	background-image: url('../images/illustrations/personal/bgIllustrations_personal_triceratops.png');
+	bottom: 19%;
+	background-position: bottom;
+	padding-top: 100%;
+	left: 50%;
+	transform: translate(-50%, 28%);
+	@include percentAspectRatio(1.2, 0.8175);
+	@media screen and (max-width: $break-small) {
+		left: auto;
+		right: -18%;
+		transform: translate(0, 15%);
+	}
+}
+#personalPage_leftRockFormation {
+	background-image: url('../images/illustrations/personal/bgIllustrations_personal_leftRockFormation.png');
+	left: 0;
+	bottom: 1%;
+	@include percentAspectRatio(.35, 1.2911112);
+	@media screen and (max-width: $break-small) {
+		bottom: 0;
+	}
+}
+#personalPage_rightRockFormation {
+	background-image: url('../images/illustrations/personal/bgIllustrations_personal_rightRockFormation.png');
+	right: 0;
+	bottom: 1%;
+	@include percentAspectRatio(.35, 1.17);
+	@media screen and (max-width: $break-small) {
+		bottom: 0;
+	}
+}
+#personalPage_bottom_divider {
+	background-image: url('../images/illustrations/experience/bgIllustrations_experience_introDivider_top.png');
+	height: 50px;
+	bottom: 0%;
+	right: 0;
+	left: 0;
+	background-position: bottom center;
+	background-repeat: repeat-x;
+	background-size: contain;
+}
+//Grids
+#grid1Placeholder {
+	top: 12.5%;
+}
+#grid2Placeholder {
+	top: 37.5%;
+}
+#grid3Placeholder {
+	top: 57%;
+}
+#grid4Placeholder {
+	top: 85%;
+}
+//Thumbnails
+#personalWork_image1 {
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/cuddles.jpg')
+	}
+}
+#personalWork_image2 {
+	grid-column-start: 3;
+  	grid-row-start: 1;
+	@media screen and (orientation: portrait) {
+		grid-column-start: 2;
+		grid-row-start: 2;
+	}
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/archerConcept.jpg')
+	}
+}
+#personalWork_image3 {
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/per_chefLouieNight1.jpg')
+	}
+}
+#personalWork_image4 {
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/parasaurolophus.jpg')
+	}
+}
+#personalWork_image5 {
+	grid-column-start: 5;
+  	grid-row-start: 1;
+	@media screen and (orientation: portrait) {
+		grid-column-start: 3;
+		grid-row-start: 2;
+	}
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/per_evildrgeneralscientistdude.jpg')
+	}
+}
+#personalWork_image6 {
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/per_moxie_accessories.jpg')
+	}
+}
+#personalWork_image7 {
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/per_nastyBird.jpg')
+	}
+}
+#personalWork_image8 {
+	grid-column-start: 4;
+  	grid-row-start: 3;
+	@media screen and (orientation: portrait) {
+		grid-column-start: 2;
+		grid-row-start: 4;
+	}
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/stegasaurus.jpg')
+	}
+}
+#personalWork_image9 {
+	grid-column-start: 2;
+  	grid-row-start: 2;
+	@media screen and (orientation: portrait) {
+		grid-column-start: 1;
+  		grid-row-start: 3;
+	}
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/per_pubcrawl11_front.jpg')
+	}
+}
+#personalWork_image10 {
+	grid-column-start: 3;
+  	grid-row-start: 2;
+	@media screen and (orientation: portrait) {
+		grid-column-start: 1;
+	}
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/per_pubcrawl13_back.jpg')
+	}
+}
+#personalWork_image11 {
+	grid-column-start: 4;
+  	grid-row-start: 1;
+	@media screen and (orientation: portrait) {
+		grid-column-start: 1;
+		grid-row-start: 4;
+	}
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/t-rex.jpg')
+	}
+}
+#personalWork_image12 {
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/envlayout.png')
+	}
+}
+#personalWork_image13 {
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/per_riffraff.jpg')
+	}
+}
+#personalWork_image14 {
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/raptor.jpg')
+	}
+}
+#personalWork_image15 {
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/spacecow.png')
+	}
+}
+#personalWork_image16 {
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/volcanicLandscape.jpg')
+	}
+}
+#personalWork_image17 {
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/per_sketchbook1.jpg')
+	}
+}
+#personalWork_image18 {
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/sparhawk9_back.jpg')
+	}
+}
+#personalWork_image19 {
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/per_teamMobius.jpg')
+	}
+}
+#personalWork_image20 {
+	grid-column-start: 4;
+  	grid-row-start: 1;
+	@media screen and (orientation: portrait) {
+		grid-column-start: 1;
+		grid-row-start: 4;
+	}
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/pubcrawl14_back.jpg')
+	}
+}
+#personalWork_image21 {
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/sparhawk7.jpg')
+	}
+}
+#personalWork_image22 {
+	grid-column-start: 1;
+  	grid-row-start: 1;
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/hornasaurus.png')
+	}
+}
+#personalWork_image23 {
+	grid-column-start: 2;
+  	grid-row-start: 2;
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/sparhawkpubcrawl12_back.jpg')
+	}
+}
+#personalWork_image24 {
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/per_sketchbook2.jpg')
+	}
+}
+#personalWork_image25 {
+	grid-column-start: 3;
+  	grid-row-start: 2;
+	@media screen and (orientation: portrait) {
+		grid-column-start: 1;
+		grid-row-start: 3;
+	}
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/apatasaurus.jpg')
+	}
+}
+#personalWork_image26 {
+	grid-column-start: 1;
+  	grid-row-start: 1;
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/per_santa.jpg')
+	}
+}
+#personalWork_image27 {
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/per_pubcrawl13_front.jpg')
+	}
+}
+#personalWork_image28 {
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/pterodactyl2.jpg')
+	}
+}
+#personalWork_image29 {
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/per_sketchbook3.jpg')
+	}
+}
+#personalWork_image30 {
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/envbackground.jpg')
+	}
+}
+#personalWork_image31 {
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/islandLandscape.jpg')
+	}
+}
+#personalWork_image32 {
+	grid-column-start: 1;
+  	grid-row-start: 3;
+	@media screen and (orientation: portrait) {
+		grid-column-start: 2;
+		grid-row-start: 5;
+	}
+	.personalProjectThumbnail {
+		background-position: top center !important;
+		background-image:url('../images/projectScreenshots/personalWork/merchant_progression.jpg')
+	}
+}
+#personalWork_image33 {
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/ankylosaurus.jpg')
+	}
+}
+#personalWork_image34 {
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/per_sketchbook3.jpg')
+	}
+}
+#personalWork_image35 {
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/triceratops.jpg')
+	}
+}
+#personalWork_image36 {
+	grid-column-start: 1;
+  	grid-row-start: 1;
+	@media screen and (orientation: portrait) {
+		grid-column-start: 3;
+	}
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/sparhawkpubcrawl12_front.jpg')
+	}
+}
+#personalWork_image37 {
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/per_babies.png')
+	}
+}
+#personalWork_image38 {
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/mosasaurus.jpg')
+	}
+}
+#personalWork_image39 {
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/per_sketchbook4.jpg')
+	}
+}
+#personalWork_image40 {
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/cuddles.jpg')
+	}
+}
+#personalWork_image41 {
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/cuddles.jpg')
+	}
+}
+#personalWork_image42 {
+	.personalProjectThumbnail {
+		background-image:url('../images/projectScreenshots/personalWork/cuddles.jpg')
+	}
+}

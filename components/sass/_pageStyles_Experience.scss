@@ -1,0 +1,811 @@
+#experience {
+	h1 {
+		background-image: url('../images/headers/h1_experience.png');
+	}
+	h2 {
+		color: $experienceSecondary;
+	}
+	h3 {
+		color: $experiencePrimary;
+	}
+	a {
+		color: $experienceTertiary;
+	}
+	a:hover {
+		color: $experienceSecondary;
+	}
+	a.button {
+		background-image: url('../images/buttons/button_experience_normal.png');
+	}
+	a.button:hover {
+		background-image: url('../images/buttons/button_experience_rollover.png');
+	}
+	#experienceIntrospace {
+		background: linear-gradient(-45deg, $experienceSecondary, $experiencePrimary);
+	}
+	#experienceContent {
+		margin: 0;
+		padding-top: 50px;
+		background-color: #cacaca;
+		#timeline {
+			position: fixed;
+			left: 50px;
+			right: 0;
+			height: 120px;
+			bottom: 0;
+			overflow: hidden;
+			z-index: 200;
+			@media screen and (max-width: $break-small) {
+				height: 60px;
+				left: 0px;
+			}
+			@media screen and (min-width: $break-large) {
+				width: 1150px;
+				left: 52%;
+				right: auto;
+				transform: translate(-50%, 0);
+			}
+			#timelineDates {
+				white-space: nowrap;
+				position: absolute;
+				left: 0;
+				height: 120px;
+				background-color: $experienceTertiary;
+				@media screen and (max-width: $break-small) {
+					height: 60px;
+				}
+				.timelineDate {
+					background-color: $experienceTertiary;
+					position: relative;
+					display: inline-block;
+					height: 120px;
+					min-width: 140px;
+					margin: 0 -.5px 0 -.5px;
+					vertical-align: top;
+					transition: background .25s;
+					@media screen and (max-width: $break-small) {
+						height: 60px;
+						min-width: 90px;
+					}
+					.timelineMonth {
+						padding: 15px 10px 0 20px;
+						text-align: left;
+						font-weight: 400;
+						text-transform: uppercase;
+						font-family: $headFont;
+						font-size: 2.5em;
+						line-height: .7em;
+						@media screen and (max-width: $break-small) {
+							font-size: 1.25em;
+							padding: 7px 10px 0 20px;
+						}
+					}
+					.timelineYear {
+						padding: 0 10px 10px 20px;
+						text-align: left;
+						font-weight: 700;
+						text-transform: uppercase;
+						font-family: $headFont;
+						font-size: 3.5em;
+						line-height: 1em;
+						@media screen and (max-width: $break-small) {
+							font-size: 1.75em;
+							padding: 0 10px 5px 20px;
+						}
+					}
+				}
+				.timelineDate:first {
+					margin: 0 -.5px 0 50px;
+					@media screen and (max-width: $break-small) {
+						margin: 0 -.5px 0 0px;
+					}
+					
+				}
+				.timelineDate.focused {
+					background-color: darken($experienceTertiary, 5%);
+				}
+				.timelineSpacer {
+					display: inline-block;
+					position: relative;
+					height: 120px;
+					transition: background .25s;
+					@media screen and (max-width: $break-small) {
+						height: 60px;
+					}
+					.leftCap {
+						position: absolute;
+						left: 0;
+						height: 100%;
+						width: 15px;
+						background-repeat: no-repeat;
+						background-position: left center;
+						background-image: url('../images/buttons/button_icon_arrow_left.png');
+					}
+					.rightCap {
+						position: absolute;
+						right: 0;
+						height: 100%;
+						width: 15px;
+						background-repeat: no-repeat;
+						background-position: right center;
+						background-image: url('../images/buttons/button_icon_arrow_right.png');
+					}
+					.midCap {
+						position: absolute;
+						left: 15px;
+						height: 100%;
+						right: 15px;
+						background-image: url('../images/qualifications/timelineSpacer.png');
+						background-position: left center;
+						background-repeat: repeat-x;
+					}
+				}
+				.timelineSpacer.focused {
+					background-color: darken($experienceTertiary, 5%);
+				}
+			}
+		}
+		#timelineMarker {
+			position: absolute;
+			transform: translate(-50%, 0);
+			width: 100px;
+			height: 150px;
+			top: 0;
+			z-index: 500;
+			background-image: url('../images/qualifications/timelineMarker.png');
+		}
+		.job {
+			top: 80px;
+			position: fixed;
+			left: 50px;
+			right: 0px;
+			overflow: hidden;
+			pointer-events: none;
+			@media screen and (max-width: $break-small) {
+				padding: 10px;
+				left: 0px;
+			}
+			.jobInfo {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 7%;
+				right: 50%;
+				padding: 40px 25px 25px 25px;
+				background-color: $experienceTertiary;
+				transition: all .7s;
+				transition-delay: 0s;
+				transition-timing-function: ease-in-out;
+				transform: translate(-150%, 0);
+				h3 {
+					font-size: 4em;
+					margin: 0 0 15px 0;
+				}
+				h4 {
+					font-size: 3em;
+				}
+				@media screen and (max-width: $break-small) {
+					bottom: 50%;
+					left: 5%;
+					right: 5%;
+					padding: 20px 15px 5px 15px;
+					h4 {
+						font-size: 2em;
+					}
+				}
+				@media screen and (min-width: $break-large) and (min-height: $break-med) {
+					padding: 80px 50px 50px 50px;
+				}
+			}
+			.jobDescription {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 50%;
+				right: 7%;
+				padding: 40px 25px 25px 25px;
+				background: linear-gradient(-45deg, $experienceSecondary, $experiencePrimary);
+				transition: all .7s;
+				transition-delay: 0s;
+				transition-timing-function: ease-in-out;
+				transform: translate(150%, 0);
+				@media screen and (max-width: $break-small) {
+					top: 50%;
+					left: 5%;
+					right: 5%;
+					padding: 5px 15px 5px 15px;
+				}
+				@media screen and (min-width: $break-large) and (min-height: $break-med) {
+					padding: 80px 50px 50px 50px;
+				}
+			}
+		}
+		.job:nth-child(even) {
+			.jobInfo {
+				background: linear-gradient(-45deg, $experienceSecondary, $experiencePrimary);
+				h3 {
+					color: $experienceTertiary;
+				}
+			}
+			.jobDescription {
+				background: none;
+				background-color: $experienceTertiary;
+				a {
+					color: $experienceSecondary;
+				}
+			}
+		}
+		
+		.job.focused {
+			.jobInfo {
+				transform: translate(0, 0);
+			}
+			.jobDescription {
+				transform: translate(0, 0);
+			}
+		}
+		.job.delay {
+			.jobInfo {
+				transition-delay: .5s;
+			}
+			.jobDescription {
+				transition-delay: .5s;
+			}
+		}
+
+		#job1 {
+			z-index: 20;
+		}
+		#job2 {
+			z-index: 40;
+		}
+		#job3 {
+			z-index: 60;
+		}
+		#job4 {
+			z-index: 80;
+		}
+		#job5 {
+			z-index: 100;
+		}
+		#job6 {
+			z-index: 120;
+		}
+		#job7 {
+			z-index: 140;
+		}
+
+		#jobs.position1 {
+			#job0 {
+				left: 50%;
+				transform:translate(-50%, 0);
+			}
+			#job1 {
+				left: 100%;
+				transform:translate(100%, 0);
+			}
+			#job2 {
+				left: 200%;
+				transform:translate(100%, 0);
+			}
+			#job3 {
+				left: 300%;
+				transform:translate(100%, 0);
+			}
+			#job4 {
+				left: 400%;
+				transform:translate(100%, 0);
+			}
+			#job5 {
+				left: 500%;
+				transform:translate(100%, 0);
+			}
+			#job6 {
+				left: 600%;
+				transform:translate(100%, 0);
+			}
+			#job7 {
+				left: 700%;
+				transform:translate(100%, 0);
+			}
+		}
+		#jobs.position2 {
+			#job0 {
+				left: 0%;
+				transform:translate(-200%, 0);
+			}
+			#job1 {
+				left: 50%;
+				transform:translate(-50%, 0);
+			}
+			#job2 {
+				left: 100%;
+				transform:translate(100%, 0);
+			}
+			#job3 {
+				left: 200%;
+				transform:translate(100%, 0);
+			}
+			#job4 {
+				left: 300%;
+				transform:translate(100%, 0);
+			}
+			#job5 {
+				left: 400%;
+				transform:translate(100%, 0);
+			}
+			#job6 {
+				left: 500%;
+				transform:translate(100%, 0);
+			}
+			#job7 {
+				left: 600%;
+				transform:translate(100%, 0);
+			}
+		}
+		#jobs.position3 {
+			#job0 {
+				left: -100%;
+				transform:translate(-200%, 0);
+			}
+			#job1 {
+				left: 0%;
+				transform:translate(-200%, 0);
+			}
+			#job2 {
+				left: 50%;
+				transform:translate(-50%, 0);
+			}
+			#job3 {
+				left: 100%;
+				transform:translate(100%, 0);
+			}
+			#job4 {
+				left: 200%;
+				transform:translate(100%, 0);
+			}
+			#job5 {
+				left: 300%;
+				transform:translate(100%, 0);
+			}
+			#job6 {
+				left: 400%;
+				transform:translate(100%, 0);
+			}
+			#job7 {
+				left: 500%;
+				transform:translate(100%, 0);
+			}
+		}
+		#jobs.position4 {
+			#job0 {
+				left: -200%;
+				transform:translate(-200%, 0);
+			}
+			#job1 {
+				left: -100%;
+				transform:translate(-200%, 0);
+			}
+			#job2 {
+				left: 0%;
+				transform:translate(-200%, 0);
+			}
+			#job3 {
+				left: 50%;
+				transform:translate(-50%, 0);
+			}
+			#job4 {
+				left: 100%;
+				transform:translate(100%, 0);
+			}
+			#job5 {
+				left: 200%;
+				transform:translate(100%, 0);
+			}
+			#job6 {
+				left: 300%;
+				transform:translate(100%, 0);
+			}
+			#job7 {
+				left: 400%;
+				transform:translate(100%, 0);
+			}
+		}
+		#jobs.position5 {
+			#job0 {
+				left: -300%;
+				transform:translate(-200%, 0);
+			}
+			#job1 {
+				left: -200%;
+				transform:translate(-200%, 0);
+			}
+			#job2 {
+				left: -100%;
+				transform:translate(-200%, 0);
+			}
+			#job3 {
+				left: 0%;
+				transform:translate(-200%, 0);
+			}
+			#job4 {
+				left: 50%;
+				transform:translate(-50%, 0);
+			}
+			#job5 {
+				left: 100%;
+				transform:translate(100%, 0);
+			}
+			#job6 {
+				left: 200%;
+				transform:translate(100%, 0);
+			}
+			#job7 {
+				left: 300%;
+				transform:translate(100%, 0);
+			}
+		}
+		#jobs.position6 {
+			#job0 {
+				top: -400%;
+				transform:translate(-200%, 0);
+			}
+			#job1 {
+				top: -300%;
+				transform:translate(-200%, 0);
+			}
+			#job2 {
+				top: -200%;
+				transform:translate(-200%, 0);
+			}
+			#job3 {
+				top: -100%;
+				transform:translate(-200%, 0);
+			}
+			#job4 {
+				top: 0%;
+				transform:translate(-200%, 0);
+			}
+			#job5 {
+				top: 50%;
+				transform:translate(-50%, 0);
+			}
+			#job6 {
+				top: 100%;
+				transform:translate(100%, 0);
+			}
+			#job7 {
+				top: 200%;
+				transform:translate(100%, 0);
+			}
+		}
+		#jobs.position7 {
+			#job0 {
+				top: -500%;
+				transform:translate(-200%, 0);
+			}
+			#job1 {
+				top: -400%;
+				transform:translate(-200%, 0);
+			}
+			#job2 {
+				top: -300%;
+				transform:translate(-200%, 0);
+			}
+			#job3 {
+				top: -200%;
+				transform:translate(-200%, 0);
+			}
+			#job4 {
+				top: -100%;
+				transform:translate(-200%, 0);
+			}
+			#job5 {
+				top: 0%;
+				transform:translate(-200%, 0);
+			}
+			#job6 {
+				top: 50%;
+				transform:translate(-50%, 0);
+			}
+			#job7 {
+				top: 100%;
+				transform:translate(100%, 0);
+			}
+		}
+		#jobs.position8 {
+			#job0 {
+				top: -600%;
+				transform:translate(-200%, 0);
+			}
+			#job1 {
+				top: -500%;
+				transform:translate(-200%, 0);
+			}
+			#job2 {
+				top: -400%;
+				transform:translate(-200%, 0);
+			}
+			#job3 {
+				top: -300%;
+				transform:translate(-200%, 0);
+			}
+			#job4 {
+				top: -200%;
+				transform:translate(-200%, 0);
+			}
+			#job5 {
+				top: -100%;
+				transform:translate(-200%, 0);
+			}
+			#job6 {
+				top: 0%;
+				transform:translate(-200%, 0);
+			}
+			#job7 {
+				top: 50%;
+				transform:translate(-50%, 0);
+			}
+		}
+
+		.skillIconGrid {
+			position: fixed;
+			width: 70%;
+			max-width: 680px;
+			left: 50%;
+			transform: translate(-52%, 0);
+			@media screen and (max-width: $break-small) {
+				transform: translate(-50%, 0);
+				width: 90%;
+				.iconGrid {
+					grid-gap: 5px;
+				}
+			}
+		}
+		.iconGrid {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			grid-gap: 25px;
+			@media screen and (max-width: $break-small) {
+				padding: 0 4%;
+				width: 92%;
+				#{headings()} {
+					margin-top: 10px;
+				}
+			}
+			@media screen and (orientation: portrait) {
+				grid-template-columns: 1fr 1fr 1fr;
+			}
+			.iconImage {
+				width: 100%;
+				padding-top: 100%;
+				background-size: contain;
+			}
+			.iconLabel {
+				display: block;
+				position: relative;
+				width: 100%;
+				background: linear-gradient(-45deg, $experienceSecondary, $experiencePrimary);
+				height: 50px;
+				vertical-align: middle;
+				text-align: center;
+				margin-top: 5px;
+				span {
+					line-height: 1em;
+					position: absolute;
+					top: 50%;
+					left: 0;
+					right: 0;
+					transform: translate(0, -50%);
+					
+				}
+			}
+		}
+	}
+}
+
+//placeholders
+#timelinePlaceholder {
+	top: 35%;
+	#timelineAnchor {
+		position: absolute;
+		top: 20px;
+		
+		
+	}
+}
+#skillsPlaceholder {
+	top: 70%;
+}
+#softwarePlaceholder {
+	top: 90%;
+}
+
+//Illustrations
+#experienceTopIntroTrim {
+	background-image: url('../images/illustrations/experience/bgIllustrations_experience_introDivider_bottom.png');
+	top: 0%;
+	height: 50px;
+	right: 0;
+	left: 0;
+	background-position: top center;
+	background-repeat: repeat-x;
+	background-size: contain;
+}
+#experiencePage_divider {
+	background-image: url('../images/illustrations/experience/bgIllustrations_experience_introDivider_bottom.png');
+	left: 0;
+	right: 0;
+	height: 50px;
+	bottom: -2px;
+	background-size: auto 100%;
+	background-repeat: repeat-x;
+	transform: scaleY(-1);
+}
+#experiencePage_waterSurface {
+	background-image: url('../images/illustrations/experience/bgIllustrations_experience_introDivider_bottom.png');
+	top: 0;
+	height: 60px;
+	right: 0;
+	left: 0;
+	background-position: top center;
+	background-repeat: repeat-x;
+	background-size: contain;
+}
+#experiencePage_background {
+	background-image: url('../images/illustrations/experience/bgIllustrations_experience_background.png');
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-attachment: fixed;
+	background-repeat: repeat-x;
+	background-size: auto 200%;
+}
+#experiencePage_elasmosaurus {
+	background-image: url('../images/illustrations/experience/bgIllustrations_experience_elasmosaurus.png');
+	top: 75%;
+	left: 40%;
+	transform: translate(-50%, 0);
+	@include percentAspectRatio(1, 1.0259);
+	z-index: 30;
+}
+#experiencePage_croc {
+	background-image: url('../images/illustrations/experience/bgIllustrations_experience_croc.png');
+	top: 36%;
+	right: 55px;
+	@include percentAspectRatio(.9, 1.1);
+}
+#experiencePage_prehistoricFish {
+	background-image: url('../images/illustrations/experience/bgIllustrations_experience_prehistoricFish.png');
+	top: 0;
+	right: 0%;
+	transform: translate(5%, 0);
+	@include percentAspectRatio(.5, 1.137);
+}
+#experiencePage_nautilus {
+	background-image: url('../images/illustrations/experience/bgIllustrations_experience_nautilus.png');
+	top: 15%;
+	right: 15%;
+	@include percentAspectRatio(.4, 1.33334);
+	z-index: 30;
+}
+
+#experiencePage_harpoonSloth {
+	background-image: url('../images/illustrations/experience/bgIllustrations_experience_harpoonSloth.png');
+	top: 10%;
+	@include percentAspectRatio(.15, 1.427);
+	z-index: 10;
+}
+#experiencePage_centerGroundFormation {
+	background-image: url('../images/illustrations/experience/bgIllustrations_experience_centerGroundFormation.png');
+	left: 50%;
+	transform: translate(-50%, 0);
+	bottom: .5%;
+	@include percentAspectRatio(.6, .85);
+}
+#experiencePage_leftGroundFormation {
+	background-image: url('../images/illustrations/experience/bgIllustrations_experience_leftGroundFormation.png');
+	left: 0;
+	bottom: 2.5%;
+	@include percentAspectRatio(.35, 1.7);
+}
+#experiencePage_rightGroundFormation {
+	background-image: url('../images/illustrations/experience/bgIllustrations_experience_rightGroundFormation.png');
+	padding-top: 75%;
+	right: 0;
+	bottom: 2% !important;
+	@include percentAspectRatio(.38, 1.846);
+}
+#experiencePage_oceanFloor {
+	background-image: url('../images/illustrations/experience/bgIllustrations_experience_seaFloor.png');
+	bottom: 0;
+	height: 6%;
+	right: 0;
+	left: 0;
+	background-position: top center;
+	background-repeat: repeat-x;
+	background-size: auto 100%;
+}
+//skill icons
+#skillIcon_uiDesign {
+	.iconImage {
+		background-image: url('../images/skillIcons/skill_icons_uiDesign.png');
+	}
+}
+#skillIcon_wireframing {
+	.iconImage {
+		background-image: url('../images/skillIcons/skill_icons_wireframing.png');
+	}
+}
+#skillIcon_userFlow {
+	.iconImage {
+		background-image: url('../images/skillIcons/skill_icons_userFlow.png');
+	}
+}
+#skillIcon_artDirection {
+	.iconImage {
+		background-image: url('../images/skillIcons/skill_icons_artDirection.png');
+	}
+}
+#skillIcon_iconography {
+	.iconImage {
+		background-image: url('../images/skillIcons/skill_icons_iconography.png');
+	}
+}
+#skillIcon_illustration {
+	.iconImage {
+		background-image: url('../images/skillIcons/skill_icons_illustration.png');
+	}
+}
+#skillIcon_scripting {
+	.iconImage {
+		background-image: url('../images/skillIcons/skill_icons_scripting.png');
+	}
+}
+#skillIcon_management {
+	.iconImage {
+		background-image: url('../images/skillIcons/skill_logo_management.png');
+	}
+}
+
+#skillIcon_axure {
+	.iconImage {
+		background-image: url('../images/skillIcons/skill_logo_axure.png');
+	}
+}
+#skillIcon_css {
+	.iconImage {
+		background-image: url('../images/skillIcons/skill_logo_css.png');
+	}
+}
+#skillIcon_html {
+	.iconImage {
+		background-image: url('../images/skillIcons/skill_logo_html.png');
+	}
+}
+#skillIcon_illustrator {
+	.iconImage {
+		background-image: url('../images/skillIcons/skill_logo_illustrator.png');
+	}
+}
+#skillIcon_javascript {
+	.iconImage {
+		background-image: url('../images/skillIcons/skill_logo_javascript.png');
+	}
+}
+#skillIcon_perforce {
+	.iconImage {
+		background-image: url('../images/skillIcons/skill_logo_perforce.png');
+	}
+}
+#skillIcon_photoshop {
+	.iconImage {
+		background-image: url('../images/skillIcons/skill_logo_photoshop.png');
+	}
+}
+#skillIcon_unity {
+	.iconImage {
+		background-image: url('../images/skillIcons/skill_logo_unity.png');
+	}
+}

@@ -80,4 +80,20 @@
 @mixin percentMaxSize($size) {
 	width: $size * 100%;
   	max-width: $size * $break-large;
+	@media screen and (max-width: $break-small) {
+		width: $size * 160%;
+	}
+}
+@mixin percentAspectRatio($size, $aspectRatio) {
+	width: $size * 100%;
+  	max-width: $size * $break-large;
+	padding-top: $size * $aspectRatio * 100%;
+	@media screen and (min-width: $break-large) {
+		padding-top: 0;
+		height: $size * $aspectRatio * $break-large; 
+	}
+	@media screen and (max-width: $break-small) {
+		width: $size * 160%;
+		padding-top: $size * $aspectRatio * 160%;
+	}
 }

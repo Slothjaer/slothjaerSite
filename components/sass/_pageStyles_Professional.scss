@@ -1,11 +1,10 @@
-#professionalPage {
+#professional {
 	background-color: #ccc;
 	h1 {
 		background-image: url('../images/headers/h1_professional.png');
-		padding-top: 46.5%;
 	}
 	h2 {
-		color: $professionalSecondary;
+		color: $professionalTertiary;
 	}
 	h3 {
 		color: $professionalTertiary;
@@ -23,639 +22,926 @@
 	a.button:hover {
 		background-image: url('../images/buttons/button_professional_rollover.png');
 	}
-	.blockContent {
-		background: linear-gradient(-45deg, $professionalSecondary, $professionalPrimary);
+	.project {
+		position: fixed;
+		//display: none;
+		//opacity: .1;
+		top: 0;
+		width: 85%;
+		left: 50%;
+		max-width: 1200px;
+		min-height: 600px;
+		@media screen and (max-width: $break-large) {
+			left: 54%;
+		}
+		@media screen and (max-width: $break-small) {
+			left: 50%;
+			width: 95%;
+		}
+		.projectContent {
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			position: absolute;
+			overflow: hidden;
+			.blockContent {
+				position: absolute;
+				display: block;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				//background-color: pink;
+				.blockText {
+					position: absolute;
+					display: block;
+					top: 0;
+					height: 100%;
+					left: 50%;
+					padding: 0% 7%;
+					width: 36%;
+					background: linear-gradient(-45deg, $professionalSecondary, $professionalPrimary);
+					transition: all 1s;
+					#{headings()} {
+						margin-top: 50px;
+					}
+					@media screen and (max-width: $break-med) {
+						top: 45%;
+						height: 55%;
+						left: 0;
+						width: 80%;
+						padding: 0% 10%;
+						#{headings()} {
+							margin-top: 10px;
+						}
+					}
+					@media screen and (max-width: $break-small) {
+						padding: 0 4%;
+						width: 92%;
+						#{headings()} {
+							margin-top: 10px;
+						}
+					}
+				}
+				.gallery {
+					position: absolute;
+					display: block;
+					height: 100%;
+					width: 50%;
+					transition: all 1s;
+					overflow: hidden;
+					background-color: black;
+					z-index: 100;
+					@media screen and (max-width: $break-med) {
+						height: 45%;
+						left: 0;
+						width: 100%;
+					}
+					.galleryImage {
+						position: absolute;
+						display: block;
+						top: 0%;
+						bottom: 0%;
+						left: 0%;
+						right: 0%;
+						background-repeat: no-repeat;
+						background-size: cover;
+						background-position: center center;
+						transition: all .25s;
+						opacity: 0;
+					}
+					.galleryImage.active {
+						opacity: 1;
+					}
+					.galleryUI {
+						position: absolute;
+						display: block;
+						top: 0;
+						bottom: 0;
+						left: 0;
+						right: 0;
+						opacity: 0;
+						transition: opacity .5s .25s;
+						.openNewWindowButton {
+							position: absolute;
+							display: block;
+							top: 40%;
+							left: 50%;
+							width: 35%;
+							padding-top: 35%;
+							transform: translate(-50%, -50%);
+							background-image: url('../images/buttons/button_icon_openNewWindow.png');
+							background-repeat: no-repeat;
+							background-position: left;
+							background-size: 500% 100%;
+							pointer-events: none;
+							transition: width 1s .25s, padding-top 1s .25s;
+							animation: windowIconCloseTransition .2s steps(4);
+						}
+						.openNewWindowButton:hover {
+							background-position: 100% 0;
+							animation: windowIconOpenTransition .2s steps(4);
+						}
+						.indexMenu {
+							position: absolute;
+							display: block;
+							bottom: 10%;
+							left: 0;
+							right: 0;
+							text-align: center;
+							.indexMenuItem {
+								display: inline-block;
+								padding: 5px 8px;
+								margin: 0 5px;
+								font-size: 2em;
+								color: #AAA;
+							}
+							.indexMenuItem:hover {
+								animation: offsetBounce 1s;
+								color: #FFF;
+							}
+							.indexMenuItem.active {
+								background-color: $professionalPrimary;
+								pointer-events: none;
+								color: #FFF;
+							}
+						}
+					}
+				}
+				.gallery.hoverState {
+					.galleryImage.active {
+						top: -15%;
+						bottom: -15%;
+						left: -15%;
+						right: -15%;
+						opacity: .3;
+					}
+					.galleryUI {
+						opacity: 1;
+						.openNewWindowButton {
+							width: 20%;
+							padding-top: 20%;
+							pointer-events: all;
+						}
+					}
+				}
+				.introPicture {
+					background-size: cover;
+					background-position: center;
+				}
+			}
+			.blockContent:nth-child(even) {
+				.blockText {
+					left: 0;
+				}
+				.gallery {
+					left: 50%;
+				}
+			}
+		}
+	}
+	.project.position1 {
+		.blockContent:first-child {
+			.blockText {
+				top: 0;
+				@media screen and (max-width: $break-med) {
+					top: 45%;
+					left: 0%;
+				}
+			}
+			.gallery {
+				top: 0;
+				@media screen and (max-width: $break-med) {
+					top: 0%;
+					left: 0%;
+				}
+			}
+		}
+		.blockContent:nth-child(2) {
+			.blockText {
+				top: 100%;
+				@media screen and (max-width: $break-med) {
+					top: 45%;
+					left: 100%;
+				}
+			}
+			.gallery {
+				top: -100%;
+				@media screen and (max-width: $break-med) {
+					top: 0%;
+					left: -100%;
+				}
+			}
+		}
+		.blockContent:nth-child(3) {
+			.blockText {
+				top: -200%;
+				@media screen and (max-width: $break-med) {
+					top: 45%;
+					left: 200%;
+				}
+			}
+			.gallery {
+				top: 200%;
+				@media screen and (max-width: $break-med) {
+					top: 0%;
+					left: -200%;
+				}
+			}
+		}
+		.blockContent:nth-child(4) {
+			.blockText {
+				top: 300%;
+				@media screen and (max-width: $break-med) {
+					top: 45%;
+					left: 300%;
+				}
+			}
+			.gallery {
+				top: -300%;
+				@media screen and (max-width: $break-med) {
+					top: 0%;
+					left: -300%;
+				}
+			}
+		}
+		.blockContent:nth-child(5) {
+			.blockText {
+				top: -400%;
+				@media screen and (max-width: $break-med) {
+					top: 45%;
+					left: 400%;
+				}
+			}
+			.gallery {
+				top: 400%;
+				@media screen and (max-width: $break-med) {
+					top: 0%;
+					left: -400%;
+				}
+			}
+		}
+	}
+	.project.position2 {
+		.blockContent:first-child {
+			.blockText {
+				top: 100%;
+				@media screen and (max-width: $break-med) {
+					top: 45%;
+					left: -100%;
+				}
+			}
+			.gallery {
+				top: -100%;
+				@media screen and (max-width: $break-med) {
+					top: 0%;
+					left: 100%;
+				}
+			}
+		}
+		.blockContent:nth-child(2) {
+			.blockText {
+				top: 0%;
+				@media screen and (max-width: $break-med) {
+					top: 45%;
+					left: 0%;
+				}
+			}
+			.gallery {
+				top: 0%;
+				@media screen and (max-width: $break-med) {
+					top: 0%;
+					left: 0%;
+				}
+			}
+		}
+		.blockContent:nth-child(3) {
+			.blockText {
+				top: -100%;
+				@media screen and (max-width: $break-med) {
+					top: 45%;
+					left: 100%;
+				}
+			}
+			.gallery {
+				top: 100%;
+				@media screen and (max-width: $break-med) {
+					top: 0%;
+					left: -100%;
+				}
+			}
+		}
+		.blockContent:nth-child(4) {
+			.blockText {
+				top: 200%;
+				@media screen and (max-width: $break-med) {
+					top: 45%;
+					left: 200%;
+				}
+			}
+			.gallery {
+				top: -200%;
+				@media screen and (max-width: $break-med) {
+					top: 0%;
+					left: -200%;
+				}
+			}
+		}
+		.blockContent:nth-child(5) {
+			.blockText {
+				top: -300%;
+				@media screen and (max-width: $break-med) {
+					top: 45%;
+					left: 300%;
+				}
+			}
+			.gallery {
+				top: 300%;
+				@media screen and (max-width: $break-med) {
+					top: 0%;
+					left: -300%;
+				}
+			}
+		}
+	}
+	.project.position3 {
+		.blockContent:first-child {
+			.blockText {
+				top: 200%;
+				@media screen and (max-width: $break-med) {
+					top: 45%;
+					left: -200%;
+				}
+			}
+			.gallery {
+				top: -200%;
+				@media screen and (max-width: $break-med) {
+					top: 0%;
+					left: 200%;
+				}
+			}
+		}
+		.blockContent:nth-child(2) {
+			.blockText {
+				top: -100%;
+				@media screen and (max-width: $break-med) {
+					top: 45%;
+					left: -100%;
+				}
+			}
+			.gallery {
+				top: 100%;
+				@media screen and (max-width: $break-med) {
+					top: 0%;
+					left: 100%;
+				}
+			}
+		}
+		.blockContent:nth-child(3) {
+			.blockText {
+				top: 0%;
+				@media screen and (max-width: $break-med) {
+					top: 45%;
+					left: 0;
+				}
+			}
+			.gallery {
+				top: 0%;
+				@media screen and (max-width: $break-med) {
+					top: 0%;
+					left: 0%;
+				}
+			}
+		}
+		.blockContent:nth-child(4) {
+			.blockText {
+				top: 100%;
+				@media screen and (max-width: $break-med) {
+					top: 45%;
+					left: 100%;
+				}
+			}
+			.gallery {
+				top: -100%;
+				@media screen and (max-width: $break-med) {
+					top: 0%;
+					left: -100%;
+				}
+			}
+		}
+		.blockContent:nth-child(5) {
+			.blockText {
+				top: -200%;
+				@media screen and (max-width: $break-med) {
+					top: 45%;
+					left: 200%;
+				}
+			}
+			.gallery {
+				top: 200%;
+				@media screen and (max-width: $break-med) {
+					top: 0%;
+					left: -200%;
+				}
+			}
+		}
+	}
+	.project.position4 {
+		.blockContent:first-child {
+			.blockText {
+				top: 300%;
+				@media screen and (max-width: $break-med) {
+					top: 45%;
+					left: -300%;
+				}
+			}
+			.gallery {
+				top: -300%;
+				@media screen and (max-width: $break-med) {
+					top: 0%;
+					left: 300%;
+				}
+			}
+		}
+		.blockContent:nth-child(2) {
+			.blockText {
+				top: -200%;
+				@media screen and (max-width: $break-med) {
+					top: 45%;
+					left: -200%;
+				}
+			}
+			.gallery {
+				top: 200%;
+				@media screen and (max-width: $break-med) {
+					top: 0%;
+					left: 200%;
+				}
+			}
+		}
+		.blockContent:nth-child(3) {
+			.blockText {
+				top: 100%;
+				@media screen and (max-width: $break-med) {
+					top: 45%;
+					left: -100%;
+				}
+			}
+			.gallery {
+				top: -100%;
+				@media screen and (max-width: $break-med) {
+					top: 0%;
+					left: 100%;
+				}
+			}
+		}
+		.blockContent:nth-child(4) {
+			.blockText {
+				top: 0;
+				@media screen and (max-width: $break-med) {
+					top: 45%;
+					left: 0%;
+				}
+			}
+			.gallery {
+				top: 0;
+				@media screen and (max-width: $break-med) {
+					top: 0%;
+					left: 0%;
+				}
+			}
+		}
+		.blockContent:nth-child(5) {
+			.blockText {
+				top: -100%;
+				@media screen and (max-width: $break-med) {
+					top: 45%;
+					left: 100%;
+				}
+			}
+			.gallery {
+				top: 100%;
+				@media screen and (max-width: $break-med) {
+					top: 0%;
+					left: -100%;
+				}
+			}
+		}
+	}
+	.project.position5 {
+		.blockContent:first-child {
+			.blockText {
+				top: 400%;
+				@media screen and (max-width: $break-med) {
+					top: 45%;
+					left: -400%;
+				}
+			}
+			.gallery {
+				top: -400%;
+				@media screen and (max-width: $break-med) {
+					top: 0%;
+					left: 400%;
+				}
+			}
+		}
+		.blockContent:nth-child(2) {
+			.blockText {
+				top: -300%;
+				@media screen and (max-width: $break-med) {
+					top: 45%;
+					left: -300%;
+				}
+			}
+			.gallery {
+				top: 300%;
+				@media screen and (max-width: $break-med) {
+					top: 0%;
+					left: 300%;
+				}
+			}
+		}
+		.blockContent:nth-child(3) {
+			.blockText {
+				top: 200%;
+				@media screen and (max-width: $break-med) {
+					top: 45%;
+					left: -200%;
+				}
+			}
+			.gallery {
+				top: -200%;
+				@media screen and (max-width: $break-med) {
+					top: 0%;
+					left: 200%;
+				}
+			}
+		}
+		.blockContent:nth-child(4) {
+			.blockText {
+				top: -100%;
+				@media screen and (max-width: $break-med) {
+					top: 45%;
+					left: -100%;
+				}
+			}
+			.gallery {
+				top: 100%;
+				@media screen and (max-width: $break-med) {
+					top: 0%;
+					left: 100%;
+				}
+			}
+		}
+		.blockContent:nth-child(5) {
+			.blockText {
+				top: 0%;
+				@media screen and (max-width: $break-med) {
+					top: 45%;
+					left: 0%;
+				}
+			}
+			.gallery {
+				top: 0%;
+				@media screen and (max-width: $break-med) {
+					top: 0%;
+					left: -0%;
+				}
+			}
+		}
 	}
 	#gotProject {
-		
-	}
-	#gotProject {
-		.keyArtBase {
-			background-image: url('../images/projectKeyArt/projectKeyArt_GOT_base.jpg');
-		}
-		.keyArtCutOut {
-			background-image: url('../images/projectKeyArt/projectKeyArt_GOT_cutOut.png');
-		}
-		h2 {
-			background-image: url('../images/projectKeyArt/projectKeyArt_GOT_logo.png');
+		.introPicture {
+			background-image: url('../images/introImages/introImage_gotConquest.jpg');
 		}
 	}
 	#lotroProject {
-		.keyArtBase {
-			background-image: url('../images/projectKeyArt/projectKeyArt_LOTRO_base.jpg');
-		}
-		.keyArtCutOut {
-			background-image: url('../images/projectKeyArt/projectKeyArt_LOTRO_cutOut.png');
-		}
-		h2 {
-			background-image: url('../images/projectKeyArt/projectKeyArt_LOTRO_logo.png');
+		.introPicture {
+			background-image: url('../images/introImages/introImage_lotro.jpg');
 		}
 	}
 	#ddoProject {
-		.keyArtBase {
-			background-image: url('../images/projectKeyArt/projectKeyArt_DDO_base.jpg');
-		}
-		.keyArtCutOut {
-			background-image: url('../images/projectKeyArt/projectKeyArt_DDO_cutOut.png');
-		}
-		h2 {
-			background-image: url('../images/projectKeyArt/projectKeyArt_DDO_logo.png');
+		z-index: 20;
+		.introPicture {
+			background-image: url('../images/introImages/introImage_ddo.jpg');
 		}
 	}
 	#icProject {
-		z-index: 40;
-		.keyArtBase {
-			background-image: url('../images/projectKeyArt/projectKeyArt_IC_base.jpg');
-		}
-		.keyArtCutOut {
-			background-image: url('../images/projectKeyArt/projectKeyArt_IC_cutOut.png');
-		}
-		h2 {
-			background-image: url('../images/projectKeyArt/projectKeyArt_IC_logo.png');
-		}
-		
-	}
-	.introduction {
-		background: linear-gradient(0deg, #858585, #999);
-		#professionalIntroductionAnchor {
-			position: absolute;
-			top: 0%;
+		z-index: 50;
+		.introPicture {
+			background-image: url('../images/introImages/introImage_ic.jpg');
 		}
 	}
-	.project {
-		display: block;
-		position: fixed;
-		left: 0;
-		right: 0;
-		top: 150%;
+	#professionalIntrospace {
+		background: linear-gradient(-45deg, $professionalSecondary, $professionalPrimary);
+	}
+	.projectNav {
+		position: absolute;
+		width: 70px;
+		height: 35%;
+		max-height: 300px;
+		top: 50%;
 		transform: translate(0, -50%);
+		background-repeat: no-repeat;
+		background-size: contain;
+		transition: all .35s;
+		z-index: 110;
 		@media screen and (max-width: $break-small) {
-			z-index: 50;
+			top: auto;
+			bottom: 5px;
+			height: 75px;
+			width: 40px;
+			transform: translate(0, 0);
 		}
-		.projectContent.projectIntroduction {
-			padding: 40% 30px 20px 30px;
-			p {
-				transition: all .5s linear .5s;
-				padding-top: 30px;
-				opacity: 0;
-			}
-			h2 {
-				position: absolute;
-				top: 23%;
-				bottom: 53%;
-				left: 20%;
-				right: 20%;
-				background-position: bottom center;
-				background-size: contain;
-				background-repeat: no-repeat;
-				transition: all .5s linear;
-				span {
-					display: none;
-				}
-			}
-		}
-		.projectContent {
-			a.button {
-				position: absolute;
-				transform: translate(-50%, 0);
-				left: 50%;
-				bottom: -55px;
-				.buttonIcon {
-					background-image: url('../images/buttons/button_icon_arrow_right.png');
-				}
-			}
-			a.button:hover {
-				transform: translate(-49%, 5%);
-				.buttonIcon {
-					animation: buttonProjectBounce 1.5s;
-				}
-			}
-			@keyframes buttonProjectBounce {
-				0%, 20%, 100%   { 
-				  transform: translate(0, 0);
-				}
-				40%, 80% { 
-				  transform: translate(4px, 0);
-				}
-				60% { 
-				  transform: translate(-4px, 0);
-				}
-			}
-			.sideButton {
-				position: absolute;
-				display: block;
-				width: 65px;
-				z-index: 100;
-				@media screen and (max-width: $break-small) {
-					width: 50px;
-				}
-				div {
-					position: absolute;
-					display: block;
-					background-size: 100% 100%;
-				}
-				.backing {
-					width: 28px;
-					background-image: url('../images/buttons/button_sideButton_professional_backing.png');
-					transition: all .35s;
-				}
-				.sideButtonMain {
-					left: 0;
-					right: 0;
-					transition: all .35s, background-image 2s;
-					.arrow {
-						top: 50%;
-						height: 20px;
-						width: 10px;
-						transform: translate(-50%, -50%);
-					}
-				}
-			}
-			.rightButton {
-				right: -50px;
-				top: 35%;
-				bottom: 30%;
-				@media screen and (max-width: $break-small) {
-					right: -35px;
-				}
-				.backing {
-					right: 0px;
-					bottom: 0;
-					height: 27px;
-				}
-				.sideButtonMain {
-					top: 0;
-					bottom: 15px;
-					background-image: url('../images/buttons/button_rightsideButton_professional_normal.png');
-					.arrow {
-						left: 60%;
-						background-image: url('../images/buttons/button_icon_arrow_right.png');
-					}
-				}
-			}
-			.rightButton:hover {
-				.backing {
-					right: 5px;
-					bottom: 0;
-					height: 17px;
-					width: 24px;
-				}
-				.sideButtonMain {
-					top: 5px;
-					bottom: 10px;
-					left: -5px;
-					right: 5px;
-					.arrow {
-						animation: rightButtonBounce 1.5s;
-					}
-				}
-			}
-			@keyframes rightButtonBounce {
-				0%, 20%, 100%   { 
-				  left: 60%;
-				}
-				40%, 80% { 
-				  left: 65%;
-				}
-				60% { 
-				  left: 55%;
-				}
-			}
-			.leftButton {
-				left: -50px;
-				bottom: 35%;
-				top: 30%;
-				@media screen and (max-width: $break-small) {
-					left: -35px;
-				}
-				.backing {
-					left: 0px;
-					top: 0;
-					height: 20px;
-					transform: scale(-1, -1)
-				}
-				.sideButtonMain {
-					bottom: 0;
-					top: 15px;
-					background-image: url('../images/buttons/button_leftsideButton_professional_normal.png');
-					.arrow {
-						left: 40%;
-						background-image: url('../images/buttons/button_icon_arrow_left.png');
-					}
-				}
-			}
-			.leftButton:hover {
-				.backing {
-					left: 5px;
-					height: 25px;
-					width: 23px;
-				}
-				.sideButtonMain {
-					bottom: -5px;
-					top: 20px;
-					right: -5px;
-					left: 5px;
-					.arrow {
-						animation: leftButtonBounce 1.5s;
-					}
-				}
-			}
-			@keyframes leftButtonBounce {
-				0%, 20%, 100%   { 
-				  left: 40%;
-				}
-				40%, 80% { 
-				  left: 35%;
-				}
-				60% { 
-				  left: 45%;
-				}
-			}
-			.divLine {
-				display: block;
-				position: absolute;
-				bottom: 62%;
-				top: 34%;
-				left: 0;
-				right: 0;
-				background-size: 100% 100%;
-				transition: all .5s ease-out;
-				background-image: url('../images/projectKeyArt/projectKeyArt_divider.png');
-			}
-			.keyArtWrapper {
-				display: block;
-				position: absolute;
-				bottom: 65%;
-				left: 0;
-				right: 0;
-				overflow: hidden;
-				transition: all .5s ease-out;
-				.keyArt {
-					display: block;
-					position: absolute;
-					transition: all .75s, left 1.5s, right 1.5s;
-					background-position: top center;
-					background-size: 100% auto;
-					left: -20%;
-					right: -20%;
-					bottom: 0;
-				}
-			}
-			.keyArtBaseWrapper {
-				top: 0;
-				.keyArtBase {
-					top: 0;
-				}
-			}
-			.keyArtCutOutWrapper {
-				top: -20%;
-				.keyArtCutOut {
-					top: 36%;
-				}
-			}	
-			.gallery {
-				display: block;
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 15%;
-				background-color: black;
-				overflow: hidden;
-				transition: all .75s .85s;
-				z-index: 100;
-				.galleryImage {
-					position: absolute;
-					display: block;
-					top: -5%;
-					padding-top: 95%;
-					left: -5%;
-					right: -5%;
-					background-repeat: no-repeat;
-					background-size: cover;
-					background-position: center center;
-					transition: all 1.5s;
-					opacity: 0;
-				}
-				.galleryImage.active {
-					opacity: 1;
-				}
-				.galleryUI {
-					position: absolute;
-					display: block;
-					top: 0;
-					bottom: 0;
-					left: 0;
-					right: 0;
-					opacity: 0;
-					transition: opacity 1s .25s;
-					.openNewWindowButton {
-						position: absolute;
-						display: block;
-						top: 40%;
-						left: 50%;
-						width: 35%;
-						padding-top: 35%;
-						transform: translate(-50%, -50%);
-						background-image: url('../images/buttons/button_icon_openNewWindow.png');
-						background-repeat: no-repeat;
-						background-position: left;
-						background-size: 500% 100%;
-						pointer-events: none;
-						transition: width 1s .25s, padding-top 1s .25s;
-						animation: windowIconCloseTransition .2s steps(4);
-					}
-					.openNewWindowButton:hover {
-						background-position: 100% 0;
-						animation: windowIconOpenTransition .2s steps(4);
-					}
-					.indexMenu {
-						position: absolute;
-						display: block;
-						bottom: 10%;
-						left: 0;
-						right: 0;
-						text-align: center;
-						.indexMenuItem {
-							display: inline-block;
-							padding: 5px 8px;
-							margin: 0 5px;
-							font-size: 2em;
-							color: #AAA;
-						}
-						.indexMenuItem:hover {
-							animation: offsetBounce 1s;
-							color: #FFF;
-						}
-						.indexMenuItem.active {
-							background-color: $professionalPrimary;
-							pointer-events: none;
-							color: #FFF;
-						}
-					}
-				}
-			}
-			.gallery.hoverState {
-				.galleryImage.active {
-					top: 0;
-					padding-top: 85%;
-					left: 0;
-					right: 0;
-					opacity: .6;
-				}
-				.galleryUI {
-					opacity: 1;
-					.openNewWindowButton {
-						width: 20%;
-						padding-top: 20%;
-						pointer-events: all;
-					}
-				}
-			}
-			.titleSpace {
-				display: block;
-				position: absolute;
-				top: 85%;
-				bottom: 0;
-				left: 0;
-				right: 0;
-				padding: 0 25px;
-				transition: all .65s ease-in .25s;
-				h3 {
-					position: absolute;
-					top: 50%;
-					transform: translate(0, -50%);
-				}
-				a.textToggle {
-					display: block;
-					position: absolute;
-					top: 10px;
-					bottom: 10px;
-					right: 10px;
-					width: 12%;
-					transition: all .35s;
-					background-size: contain;
-					background-position: center center;
-					background-repeat: no-repeat;
-					z-index: 100;
-					background-image: url('../images/buttons/button_square_professional_normal.png');
-					.textToggleIcon {
-						display: block;
-						position: absolute;
-						left: 10%;
-						right: 10%;
-						top: 10%;
-						//background-color: black;
-						padding-top: 80%;
-						background-size: auto 100%;
-						background-position: left;
-						background-repeat: no-repeat;
-						background-image: url('../images/buttons/button_icon_arrow_to_info.png');
-						animation: closeTitleTransition 2s steps(48);
-					}
-				}
-				a.textToggle:hover {
-					transform: translate(3px, 3px);
-				}
-			}
-			.descriptiveText {
-				display: block;
-				position: absolute;
-				left: 10px;
-				right: 10px;
-				top: 10%;
-				bottom: 10px;
-				padding: 35px;
-				opacity: 0;
-				transition: all .75s 0s;
-			}
-		}
-		.projectContent.textView {
-			.gallery {
-				bottom: 100%;
-				transition: all .75s 0s;
-				.galleryImage.active, .galleryImage {
-					opacity: .1;
-					left: -35%;
-					right: -35%;
-					transition: all 1s 0s;
-				}
-			}
-			.titleSpace {
-				top: 0;
-				bottom: 85%;
-				a.textToggle {
-					.textToggleIcon {
-						background-position: 98% 0;
-						animation: openTitleTransition 2s steps(48);
-					}
-				}
-			}
-			.descriptiveText {
-				opacity: 1;
-				transition: all .75s 1.3s;
-			}
-		}
-		
-	}
-	.project.focused {
-		.blockWrapper.active {
-			.projectIntroduction {
-				p {
-					padding-top: 0px;
-					opacity: 1;
-				}
-				h2 {
-					top: 14%;
-					bottom: 55%;
-					left: 10%;
-					right: 10%;
-				}
-			}
-			.divLine {
-				bottom: 55%;
-				top: 30%;
-			}
-			.projectContent {
-				.keyArtWrapper {
-					.keyArt {
-						left: 0;
-						right: 0;
-					}
-				}
-				.keyArtBaseWrapper {
-					.keyArtBase {
-						top: -58%;
-					}
-				}
-				.keyArtCutOutWrapper {
-					.keyArtCutOut {
-						top: 0;
-					}
-				}
-			}
+		.arrow {
+			position: absolute;
+			width: 10px;
+			height: 20px;
+			top: 50%;
+			transform: translate(0, -50%);
 		}
 	}
-	#professionalForgroundImages {
-		display: block;
-		position: relative;
-		width: 100%;
-		margin: auto;
-		padding-top: 3600px;
-		overflow: hidden;
-		pointer-events: none;
-		@media screen and (max-width: $break-large) {
-			padding-top: 300%;
-		}
+	.leftNav {
+		background-image: url('../images/buttons/button_leftsideButton_professional_normal.png');
+		left: -20px;
+		background-position: left center;
 		@media screen and (max-width: $break-small) {
-			width: 130%;
-			left: -15%;
-			padding-top: 450%;
+			left: -5px;
+		}
+		.arrow {
+			left: 20px;
+			background-image: url('../images/buttons/button_icon_arrow_left.png');
+			@media screen and (max-width: $break-small) {
+				left: 8px;
+			}
 		}
 	}
-	
+	.leftNav:hover {
+		left: -30px;
+		@media screen and (max-width: $break-small) {
+			left: -10px;
+		}
+		.arrow {
+			animation: leftArrowBounce 1.5s;
+		}
+	}
+	.rightNav {
+		background-image: url('../images/buttons/button_rightsideButton_professional_normal.png');
+		right: -20px;
+		background-position: right center;
+		@media screen and (max-width: $break-small) {
+			right: -5px;
+		}
+		.arrow {
+			right: 20px;
+			background-image: url('../images/buttons/button_icon_arrow_right.png');
+			@media screen and (max-width: $break-small) {
+				right: 8px;
+			}
+		}
+	}
+	.rightNav:hover {
+		right: -30px;
+		@media screen and (max-width: $break-small) {
+			right: -10px;
+		}
+		.arrow {
+			animation: rightArrowBounce 1.5s;
+		}
+	}
+	.projectMenu {
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%, 0);
+		bottom: 10px;
+		text-align: center;
+		z-index: 110;
+		@media screen and (max-width: $break-small) {
+			bottom: 25px;
+		}
+		a {
+			display: inline-block;
+			font-family: $headFont;
+			font-weight: 700;
+			font-size: 18pt;
+			background-image: url('../images/buttons/button_square_professional_normal.png');
+			background-size: 100% 100%;
+			width: 50px;
+			height: 50px;
+			line-height: 2;
+			color: desaturate($professionalTertiary, 20%);
+			text-shadow: 1px 1px 3px darken($professionalTertiary, 30%);
+			@media screen and (max-width: $break-small) {
+				font-size: 12pt;
+				width: 35px;
+				height: 35px;
+			}
+		}
+		a.active, a:hover {
+			color: white;
+			text-shadow: 2px 2px 5px darken($professionalTertiary, 60%);
+			background-image: url('../images/buttons/button_square_professional_rollover.png');
+			
+		}
+		a:hover {
+			animation: offsetBounce 1s;
+		}
+	}
+	#gotPlaceholder {
+		top: 12.5%;
+	}
+	#lotroPlaceholder {
+		top: 37.5%;
+	}
+	#ddoPlaceholder {
+		top: 62.5%;
+	}
+	#icPlaceholder {
+		top: 87.5%;
+	}
+	//Illustrations
 	#profesionalPage_background {
 		background-image: url('../images/illustrations/professional/bgIllustrations_professional_background.png');
 		top: 0;
 		left: 0;
-		width: 100%;
-		height: 50%;
-		padding-top: 5%;
-		background-position: left top 2%;
-		background-size: auto 98%;
+		right: 0;
+		bottom: 22%;
+		background-attachment: fixed;
 		background-repeat: repeat-x;
+		background-size: auto 200%;
 	}
-	#treetopBuffer {
+	#professionalTopIntroTrim {
+		background-image: url('../images/illustrations/professional/bgIllustrations_professional_intro_treetopPattern.png');
 		top: 0;
-		left: 0;
+		height: 100px;
 		right: 0;
-		height: 3%;
-		background-color: #858585;
+		left: 0;
+		background-position: top center;
+		background-repeat: repeat-x;
+		background-size: contain;
+	}
+	#profesionalPage_rightTree_top {
+		background-image: url('../images/illustrations/professional/bgIllustrations_professional_rightTree_top.png');
+		top: 0%;
+		right: 0;
+		@include percentAspectRatio(.6, 0.648);
+	}
+	#profesionalPage_rightTree_telescope {
+		background-image: url('../images/illustrations/professional/bgIllustrations_professional_rightTree_telescope.png');
+		top: 16%;
+		right: 0;
+		@include percentAspectRatio(.32, 1.861);
 		@media screen and (max-width: $break-small) {
-			height: 13%;
+			top: 21%;
 		}
 	}
-	#profesionalPage_rightTree {
-		background-image: url('../images/illustrations/professional/bgIllustrations_professional_rightTree.png');
-		top: 3%;
+	#profesionalPage_rightTree_platform {
+		background-image: url('../images/illustrations/professional/bgIllustrations_professional_rightTree_platform.png');
+		top: 39.4%;
 		right: 0;
-		@include percentMaxSize(.6);
+		padding-top: 247.2%;
+		@include percentAspectRatio(.35, 2.4721);
 		@media screen and (max-width: $break-small) {
-			top: 13%;
+			top: 45%;
 		}
+	}
+	#profesionalPage_rightTree_base {
+		background-image: url('../images/illustrations/professional/bgIllustrations_professional_rightTree_base.png');
+		bottom: 0;
+		right: 0;
+		@include percentAspectRatio(.45, 1.93);
+	}
+	.treeSpacer {
+		//top and bottom properties are being driven trough js.
+		background-image: url('../images/illustrations/professional/bgIllustrations_professional_rightTree_pattern.png');
+		@include percentMaxSize(.16);
+		right: 0;
+		background-repeat: repeat-y;
+		display: block;
+		position: absolute;
+		background-size: 100% auto;
+		pointer-events: none;
 	}
 	#profesionalPage_leftTree {
 		background-image: url('../images/illustrations/professional/bgIllustrations_professional_leftTree.png');
-		top: 3%;
+		top: 0;
 		left: 0;
-		@include percentMaxSize(.55);
+		@include percentAspectRatio(.55, 1.5457);
+	}
+	#profesionalPage_leftTree_base {
+		background-image: url('../images/illustrations/professional/bgIllustrations_professional_treeStump.png');
+		left: 0;
+		@include percentAspectRatio(.42, 1.0266);
+		bottom: 4%;
+		z-index: 30;
 		@media screen and (max-width: $break-small) {
-			top: 13%;
+			bottom: 6%;
+			z-index: 0;
 		}
 	}
 	#profesionalPage_feedingSloth {
 		background-image: url('../images/illustrations/professional/bgIllustrations_professional_feedingSloth.png');
-		top: 45.75%;
+		position: absolute;
+		background-position: bottom right;
+		background-size: 100% auto;
+		background-repeat: no-repeat;
+		top: 0;
+		left: -20%;
 		right: 0;
-		@include percentMaxSize(.43);
+		bottom: 37%;
+		z-index: 10;
 		
-		@media screen and (max-width: $break-small) {
-			top: 50%;
-		}
 	}
 	#profesionalPage_brachiosaurus {
 		background-image: url('../images/illustrations/professional/bgIllustrations_professional_bracciasaurus.png');
-		top: 44%;
+		top: 43%;
 		left: 0;
-		@include percentMaxSize(.31);
+		@include percentAspectRatio(.31, 1.01);
 		z-index: 10;
 		@media screen and (max-width: $break-small) {
-			top: 45%;
-			left: 5%;
+			top: 46.5%;
 		}
 	}
 	#profesionalPage_horizonGround {
 		background-image: url('../images/illustrations/professional/bgIllustrations_professional_horizonGround.png');
-		top: 65%;
+		top: 75%;
 		left: 0;
 		width: 100%;
-		@media screen and (min-width: $break-large) {
-			background-repeat: repeat-x;
-			background-size: $break-large auto;	
-		}
+		bottom: 22%;
+		background-size: auto 100%;
+		background-repeat: repeat-x;
 		@media screen and (max-width: $break-small) {
-			top: 62%;
+			top: 76%;
+			bottom: 21%;
 		}
 	}
 	#profesionalPage_ground {
 		background-color: #919191;
-		top: 70%;
+		top: 78%;
 		left: 0;
+		bottom: 0;
 		width: 100%;
 		@media screen and (max-width: $break-small) {
-			top: 67%;
+			top: 79%;
 		}
 	}
 	#profesionalPage_raptor {
 		background-image: url('../images/illustrations/professional/bgIllustrations_professional_raptor.png');
-		top: 65%;
+		bottom: 23%;
 		left: 0;
-		@include percentMaxSize(.45);
+		@include percentAspectRatio(.44, 1.3133);
+		transform: translate(0, 45%);
 		z-index: 30;
 		@media screen and (max-width: $break-small) {
-			top: 62%;
+			left: -10%;
 		}
 	}
-	#profesionalPage_bgTree {
-		background-image: url('../images/illustrations/professional/bgIllustrations_professional_bgTree.png');
+	#profesionalPage_bgTree_top {
+		background-image: url('../images/illustrations/professional/bgIllustrations_professional_bgTree_treetop.png');
 		top: 0;
-		left: 0;
-		right: 0;
-		margin-left: auto; 
-		margin-right: auto; 
-		@include percentMaxSize(1);
+		left: 50%;
+		transform: translate(-50%, 0);
+		@include percentAspectRatio(1, 0.6156);
+	}
+	#profesionalPage_bgTree_branch1 {
+		background-image: url('../images/illustrations/professional/bgIllustrations_professional_bgTree_branch1.png');
+		top: 15%;
+		left: 61%;
+		@include percentAspectRatio(.4, 0.6555);
+	}
+	#profesionalPage_bgTree_branch2 {
+		background-image: url('../images/illustrations/professional/bgIllustrations_professional_bgTree_branch2.png');
+		top: 60%;
+		left: 62%;
+		@include percentAspectRatio(.4, 0.762);
+	}
+	#profesionalPage_bgTree_branch3 {
+		background-image: url('../images/illustrations/professional/bgIllustrations_professional_bgTree_branch3.png');
+		top: 55%;
+		right: 40%;
+		@include percentAspectRatio(.2, 1.1326);
+	}
+	#profesionalPage_bgTree_base {
+		background-image: url('../images/illustrations/professional/bgIllustrations_professional_bgTree_base.png');
+		padding-top: 50%;
+		bottom: 22%;
+		left: 64%;
+		transform: translate(-50%, 30%);
+		@include percentAspectRatio(.55, .88);
 		@media screen and (max-width: $break-small) {
-			top: 5%;
+			left: 73%;
+		}
+	}
+	#profesionalPage_bgTree_spacer {
+		background-image: url('../images/illustrations/professional/bgIllustrations_professional_bgTree_pattern.png');
+		@include percentMaxSize(.135);
+		left: 55%;
+		background-repeat: repeat-y;
+		top: 5%;
+		bottom: 25%;
+		@media screen and (max-width: $break-small) {
+			left: 58%;
 		}
 	}
 	#professionalPage_coveringBrush {
@@ -673,8 +959,8 @@
 	}
 	#professionalPage_treetopPattern {
 		background-image: url('../images/illustrations/professional/bgIllustrations_professional_treetopPattern.png');
-		bottom: 98%;
-		top: 3%;
+		height: 75px;
+		top: 0;
 		right: 0;
 		left: 0;
 		background-position: bottom center;
@@ -682,69 +968,18 @@
 		background-size: auto 100%;
 	}
 	#profesionalPage_divider {
-		background-image: url('../images/illustrations/professional/bgIllustrations_professional_transitionDivider.png');
-		height: 300px;
-		top: 100%;
-		right: 0;
+		background-image: url('../images/illustrations/professional/bgIllustrations_professional_treetopPattern.png');
 		left: 0;
-		background-position: bottom center;
-		background-repeat: repeat-x;
+		right: 0;
+		height: 100px;
+		bottom: -2px;
 		background-size: auto 100%;
-	}
-	.projectTargetArea {
-		position: absolute;
-		display: block;
-		left: 0;
-		right: 0;
-		height: 20%;
-		//background-color: rgba(0, 100, 200, .4);
-		@media screen and (max-width: $break-small) {
-			height: 22%;
-		}
-	}
-	#gotProject_targetArea {
-		top: 4%;
-		@media screen and (max-width: $break-small) {
-			top: 6%;
-		}
-	}
-	#lotroProject_targetArea {
-		top: 24%;
-	}
-	#ddoProject_targetArea {
-		top: 49%;
-	}
-	#icProject_targetArea {
-		top: 75%;
+		background-repeat: repeat-x;
+		transform: scaleY(-1);
 	}
 }
-@keyframes openTitleTransition {
-   from { background-position:    0%; }
-	 to { background-position: 98%; }
-}
-@keyframes closeTitleTransition {
-   from { background-position: 98%; }
-	 to { background-position: 0%; }
-}
-@keyframes windowIconOpenTransition {
-   from { background-position: 0%; }
-	 to { background-position: 100%; }
-}
-@keyframes windowIconCloseTransition {
-   from { background-position: 100%; }
-	 to { background-position: 0%; }
-}
-@keyframes offsetBounce {
-	0%, 50%, 100%   { 
-	  transform: translate(0, 0);
-	}
-	75% { 
-	   transform: translate(0, -5%);
-	}
-	25% { 
-	   transform: translate(0, -10%);
-	}
-}
+
+//Project Gallery Images
 #legendaryItems_image1 {
 	background-image: url(../images/projectScreenshots/legendaryitems/itemAdvancement_041708_expanded.jpg);
 }
@@ -923,6 +1158,7 @@
 	background-image: url(../images/projectScreenshots/cheflouienight/per_chefLouieNight3.jpg);
 }
 #gotHUD_image1 {
+	background-position: bottom center !important;
 	background-image: url(../images/projectScreenshots/gotHUD/prof_got_hud_city.jpg);
 }
 #gotHUD_image2 {
@@ -932,8 +1168,10 @@
 	background-image: url(../images/projectScreenshots/gotHUD/prof_got_hud_warRoom.jpg);
 }
 #gotShrine_image1 {
+	background-position: bottom center !important;
 	background-image: url(../images/projectScreenshots/gotShrine/prof_got_shrine1.jpg);
 }
 #gotShrine_image2 {
+	background-position: bottom center !important;
 	background-image: url(../images/projectScreenshots/gotShrine/prof_got_shrine2.jpg);
 }

@@ -1,180 +1,201 @@
-$(document).ready(function() {
-	sizePanelToSquare ();
-	projectNav ();
-	panelCheck ();
+$(document).ready (function() {
+	sizeSections ();
+	initProjectNav ();
+	initPersonalGallery ();
+	initTimeline ();
+	navLinks ();
+	navCheck ();
+	if ($(window).width() >= 600) {
+		var s = sk.init();
+	}
+});
+
+
+
+$(window).resize(function() {
+	sizeSections ();
+	if ($(window).width() >= 600) {
+		var s = sk.init();
+	} else {
+		var s = sk.init().destroy();
+	}
 });
 $( document).scroll(function() {
   	panelCheck ();
 });
-$(window).resize(function() {
-	sizePanelToSquare ();
-	panelCheck ();
-});
-
-function sizePanelToSquare () {
-	if ($(window).width() < 460) {
-		var targetWidth = $(window).width() * .85;
-	} else if ($(window).width() < 600) {
-		var targetWidth = $(window).width() * .75;
-	} else {
-		var targetWidth = $(window).width() * .55;
-	}
-	var targetHeight = $(window).height()*.72;
-	if (targetWidth > targetHeight) {
-		var targetSize = targetHeight;
-	} else {
-		var targetSize = targetWidth;
-	}
-	if (targetSize > 600) {
-		targetSize = 600;
-	}
-	
-	//Welcome Page
-	if (($(window).height()) < $(window).width()*.8) {
-		var welcomeSpace = $(window).width()*.8;
-	} else {
-		var welcomeSpace = $(window).height();
-	}
-	$('#welcomeContent').height(welcomeSpace);
-	$('#welcomePage').css({'min-height':(($(window).height()*.5)+welcomeSpace)});
-	//$('#welcomeIntroduction').height(targetSize);
-	
-	//Project Page
-	//$('#professionalIntroduction').height(targetSize);
-	$('.blockWrapper').width(targetSize);
-	$('.project').height(targetSize);
-	if ($(window).width() < 450) {
-		var targetFontSize = (targetSize-10) * .0019;
-	} else if ($(window).width() < 600) {
-		var targetFontSize = (targetSize-30) * .0019;
-	} else {
-		var targetFontSize = (targetSize-70) * .0019;
-	}
-	$('body').css ({
-		fontSize:targetFontSize+'em'
+function sizeSections () {
+	var navIconMaxHeight = $(window).height() / 15.2;
+	$('li').css({
+		'max-height': navIconMaxHeight+'px'
 	});
-	$('#profesionalPage_background').height($(window).height()*2);
-	$('.introduction').css({'min-height':(targetSize*1.8)+'px'});
+	$('#welcome').height($(window).height()*2);
+	if ($(window).height() > $(window).width()*.8) {
+		$('#welcomeContent').height ($(window).height());
+		
+	} else {
+		$('#welcomeContent').height ($(window).width()*.8);
+	}
+	$('#debugger').html ($('#welcome').height()+ " & "+$(window).height());
+	$('.introSpace').height($(window).height()*1.2);
+	
+	if ($(window).width() > 1200) {
+		var portfolioMinHeight = 3600
+		
+	} else {
+		var portfolioMinHeight = $(window).width()*3;
+	}
+	if ($(window).width() > 600 ) {
+		var professionalPortolioHeight = $(window).height() * 6;
+		var personalPortfolioHeight = $(window).height() * 6;
+	} else {
+		var professionalPortolioHeight = $(window).height() * 5;
+		var personalPortfolioHeight = $(window).height() * 5;
+	}
+	var experienceContentHeight = $(window).height() * 8;
+	
+	$('#professionalPortfolio').css ({
+		'min-height': portfolioMinHeight+'px'
+	}).outerHeight (professionalPortolioHeight);
+	
+	$('#personalPortfolio').css ({
+		'min-height': portfolioMinHeight+'px'
+	}).outerHeight (personalPortfolioHeight);
+	
+	$('#experienceContent').css ({
+		'min-height': portfolioMinHeight+'px'
+	}).outerHeight (experienceContentHeight);
+	
+	$('.project').height($(window).height()*.8);
+	
+	if ($(window).height() > $(window).width()) {
+		var gridMaxWidth = ($(window).height() * .8) * (3/5);
+	} else {
+		var gridMaxWidth = ($(window).height() * .8) * (5/3);
+	}
+	$('.gridContainer').css ({
+		'max-width': gridMaxWidth+'px'
+	});
+	
+	$('.placeholder').height($(window).height()*.5);
+	$('#timelinePlaceholder').height($(window).height()*4);
+	
+	var placeholder1_top = $('#profesionalPage_rightTree_top').width() * .55;
+	var placeholder1_bot = parseInt($('#profesionalPage_rightTree_telescope').css('top'), 10) - placeholder1_top + ($(window).width()*.1);
+	$('#profesionalPage_rightTree_treeSpacer1').css ({
+		'top': placeholder1_top+'px'
+	}).height(placeholder1_bot);
+	
+	var placeholder2_top = $('#profesionalPage_rightTree_telescope').width() * .55 + parseInt($('#profesionalPage_rightTree_telescope').css('top'), 10);
+	var placeholder2_bot = parseInt($('#profesionalPage_rightTree_platform').css('top'), 10) - placeholder2_top + ($(window).width()*.1);
+	$('#profesionalPage_rightTree_treeSpacer2').css ({
+		'top': placeholder2_top+'px'
+	}).height(placeholder2_bot);
+	
+	var placeholder3_top = $('#profesionalPage_rightTree_platform').width() * .75 + parseInt($('#profesionalPage_rightTree_platform').css('top'), 10);
+	var placeholder3_bot = parseInt($('#profesionalPage_rightTree_base').css('top'), 10) - placeholder3_top + ($(window).width()*.15);
+	$('#profesionalPage_rightTree_treeSpacer3').css ({
+		'top': placeholder3_top+'px'
+	}).height(placeholder3_bot);
+	var bgTreeFiller_top = $('#profesionalPage_bgTree_top').width() * .55;
+	var bgTreeFiller_bot = parseInt($('#profesionalPage_bgTree_base').css('top'), 10) - bgTreeFiller_top + ($(window).width()*.5);
+	$('#profesionalPage_bgTree_spacer').css ({
+		'top': bgTreeFiller_top+'px'
+	}).height(bgTreeFiller_bot);
+	var rockFiller_top = $('#personalPage_electroSloths_cliff').width() * .9;
+	var rockFiller_bot = parseInt($('#personalPage_electroSloths').css('top'), 10) - rockFiller_top + ($(window).width()*.4);
+	$('#personalPage_rockPattern_left').css ({
+		'top': rockFiller_top+'px'
+	}).height(rockFiller_bot);
+	
+	
+	$('#workHistory').height ($(window).height()-45);
+	if ($(window).height() > 600 && $(window).width() > 600) {
+		$('.job').outerHeight ($(window).height()-260);
+	} else {
+		$('.job').outerHeight ($(window).height()-200);
+	}
 }
-
 function panelCheck () {
-	var topWindowScroll = $(window).scrollTop() + ($(window).height()*.1);
-	var bottomWindowScroll = $(window).scrollTop() + ($(window).height()*.9);
-	var midWindowScroll = $(window).scrollTop() + ($(window).height()*.5);
-	var fullWindowScroll = $(window).scrollTop() + $(window).height();
-	
-	// welcome page
-	var welcomeScrollTopPoint = $('#welcomePage').offset().top+$('#welcomeContent').height();
-	var welcomeScrollBottomPoint = $('#welcomePage').offset().top+$('#welcomePage').height();
-	if (fullWindowScroll < welcomeScrollTopPoint) {
-		$('#welcomeContent').removeClass('transitionState').removeClass('completedState');
-	} else if (fullWindowScroll > welcomeScrollBottomPoint) {
-		$('#welcomeContent').addClass('completedState').removeClass('transitionState');
+	//Welcome content
+	var windowPoint = $(window).scrollTop()+$(window).height();
+	var welcomePoint = $('#welcome').offset().top+$('#welcome').height();
+	var welcomeContentPoint = $('#welcome').offset().top+$('#welcomeContent').height();
+	if (windowPoint < welcomeContentPoint) {
+		$('#welcomeContent').css ({
+				'position':'absolute',
+				'top':'0',
+				'bottom':'auto'
+			});
+	} else if (windowPoint < welcomePoint) {
+		$('#welcomeContent').css ({
+				'position':'fixed',
+				'top':'auto',
+				'bottom':'0'
+			});
 	} else {
-		$('#welcomeContent').addClass('transitionState').removeClass('completedState');
+		$('#welcomeContent').css ({
+				'position':'absolute',
+				'top':'auto',
+				'bottom':'0'
+			});
 	}
-	if ($(window).scrollTop()<$('#welcomePage').height()){
-		var ScalePercent = $(window).scrollTop()/$('#welcomePage').height();
-		$('#WelcomePage_rightTreetop').css ({'background-size':(100+(ScalePercent*60))+'% auto'});
-		$('#WelcomePage_leftTreetop').css ({'background-size':(100+(ScalePercent*60))+'% auto'});
-		$('#WelcomePage_midground').css ({'background-size':'auto '+(50+(ScalePercent*35))+'%'});
-		$('#WelcomePage_flyingPteradon').css ({'background-size':'auto '+(95+(ScalePercent*35))+'%'});
-		$('#WelcomePage_background').css ({'background-size':'auto '+(38+(ScalePercent*25))+'%'});
-		$('#WelcomePage_clouds').css ({'background-size':'auto '+(65+(ScalePercent*20))+'%'});
-		$('#welcomeIntroduction').css ({'top':((ScalePercent*100))+'%'});
-	}
-	// professional introduction
-	if ($('#professionalIntroduction').outerHeight() > $(window).height()) {
-		var achorPoint = $('#professionalIntroductionAnchor').offset().top + $('#professionalIntroduction').outterHeight();
-		var windowPoint = bottomWindowScroll;
-	} else {
-		var achorPoint = $('#professionalIntroductionAnchor').offset().top;
-		var windowPoint = $(window).scrollTop();
-	}
-	if (achorPoint  > windowPoint) {
-		$('#professionalIntroduction').css ({
-			'position':'absolute'
-		});
-	} else {
-		$('#professionalIntroduction').css ({
-			'position':'fixed'
-		});
-	}
-		
-	// professional projects
-		
-	$('.project').each (function() {
-		var targetArea = '#'+$(this).attr('id') + "_targetArea";
-		var targetAreaTop = $(targetArea).offset().top;
-		var targetAreaBottom = targetAreaTop + $(targetArea).height();
-		var targetPct = (midWindowScroll-targetAreaTop)/$(targetArea).height();
-		if ($(window).width() < 600) {
-			var topBuffer = .45;
+	$('.introductionText').each (function () {
+		var achorPoint = $(this).parent().offset().top+($('#professionalIntrospace').height()*.1);
+		var windowPoint = $(window).scrollTop()+($(window).height()*.1);
+		if (achorPoint  > windowPoint) {
+			$(this).css ({
+				'position':'absolute'
+			});
 		} else {
-			var topBuffer = .35;
-		}
-		var bottomBuffer = 1 - topBuffer;
-		if (targetPct > topBuffer && targetPct < bottomBuffer) {
-			$(this).css ({ top:'50%' });
-		} else if (targetPct > 1) {
-			$(this).css ({ top:'150%' });
-		} else if (targetPct < 0) {
-			$(this).css ({ top:'-75%' });
-		} else if (targetPct > 0 && targetPct < topBuffer) {
-			var abovePct = 150-(targetPct/(.01*topBuffer));
-			$(this).css ({ top:abovePct+'%' });
-		} else if (targetPct > bottomBuffer && targetPct < 1) {
-			var belowPct = 50 - ((targetPct-bottomBuffer)/(.01*topBuffer));
-			$(this).css ({ top:belowPct+'%' });
-		}
-		if (targetPct > .1 && targetPct < .9) {
-			$(this).addClass('focused');
-		} else {
-			$(this).removeClass ('focused')
-		}
-		
+			$(this).css ({
+				'position':'fixed'
+			});
+	}
 	});
-	//professional background
 	
-	var topTargetPoint = $('#professionalForgroundImages').offset().top;
-	var bottomTargetPoint = $('#professionalForgroundImages').offset().top + ($('#professionalForgroundImages').outerHeight());
-	var dropAmount = ($('#professionalForgroundImages').outerHeight()) - $('#profesionalPage_background').height();
-	if (topTargetPoint > topWindowScroll ) {
-		$('#profesionalPage_background').css({
-			'top':0+'%'
-		});
-	} else if (bottomTargetPoint < bottomWindowScroll) {
-		$('#profesionalPage_background').css({
-			'top':dropAmount+'px'
-		});
-	} else {
-		var backgroundPercent = (topWindowScroll-topTargetPoint)/((bottomTargetPoint+(topWindowScroll-bottomWindowScroll))-topTargetPoint);
-		var backgroundTopPlacement = dropAmount * backgroundPercent;
-		$('#profesionalPage_background').css({
-			'top':backgroundTopPlacement+'px'
-		});
-	}
+	timelineCheck ();
+	navCheck();
 }
-
-function projectNav () {
-	$('.rightButton').click (function () {
-		event.preventDefault();
-		$(this).parent().parent().removeClass('active');
-		$(this).parent().parent().next().addClass('active');
+function initProjectNav () {
+	$('.blockContent').each (function () {
+		$(this).parent().parent().find('.projectMenu').append ("<a class='menuButton'>"+($(this).index()+1)+"</a>");
 	});
-	$('.leftButton').click (function () {
-		event.preventDefault();
-		$(this).parent().parent().removeClass('active');
-		$(this).parent().parent().prev().addClass('active');
+	$('.projectMenu a:first-child').addClass('active');
+	$('.projectMenu a.menuButton').click (function () {
+		var projectPosition = $(this).index() + 1;
+		var currentClass = 'position'+$(this).parent().parent().data('position');
+		$(this).parent().parent().removeClass (currentClass);
+		$(this).parent().parent().data('position', projectPosition);
+		var newClass = 'position'+$(this).parent().parent().data('position');
+		$(this).parent().parent().addClass (newClass);
+		$(this).parent().find('a.menuButton').removeClass('active');
+		$(this).addClass('active');
 	});
-	$('.introButton').click (function () {
-		event.preventDefault();
-		$(this).parent().parent().removeClass('active');
-		$(this).parent().parent().next().addClass('active');
-	});
-	$('.textToggle').click (function () {
-		event.preventDefault();
-		$(this).parent().parent().toggleClass('textView');
+	$('.projectNav.leftNav').click (function () {
+		var currentClass = 'position'+$(this).parent().data('position');
+		$(this).parent().removeClass (currentClass);
+		var projectPosition = $(this).parent().data('position') - 1;
+		if (projectPosition < 1) {
+			projectPosition = $(this).parent().find('.blockContent').length;
+		}
+		$(this).parent().data('position', projectPosition);
+		var newClass = 'position'+$(this).parent().data('position');
+		$(this).parent().addClass (newClass);
+		$(this).parent().find('.projectMenu a.menuButton').removeClass('active');
+		$(this).parent().find('.projectMenu a.menuButton:nth-child('+projectPosition+')').addClass ('active');
+	})
+	$('.projectNav.rightNav').click (function () {
+		var currentClass = 'position'+$(this).parent().data('position');
+		$(this).parent().removeClass (currentClass);
+		var projectPosition = $(this).parent().data('position') + 1;
+		if (projectPosition > $(this).parent().find('.blockContent').length) {
+			projectPosition = 1;
+		}
+		$(this).parent().data('position', projectPosition);
+		var newClass = 'position'+$(this).parent().data('position');
+		$(this).parent().addClass (newClass);
+		$(this).parent().find('.projectMenu a.menuButton').removeClass('active');
+		$(this).parent().find('.projectMenu a.menuButton:nth-child('+projectPosition+')').addClass ('active');
 	});
 	$('.gallery').mouseover (function () {
 		$(this).addClass('hoverState');
@@ -206,4 +227,170 @@ function projectNav () {
 		$(this).attr("href", linkPath);
 		$('#log').html(linkPath);
 	})
+}
+function initPersonalGallery () {
+	$('a.personalProjectThumbnail').each (function () {
+		var linkPath = $(this).css ('background-image');
+		linkPath  = linkPath.replace('url(','').replace(')','').replace(/\"/gi, "");
+		$(this).attr("href", linkPath);
+	})
+}
+function initTimeline () {
+	$(".timelineDate:first-child").data('spacer', ((new Date).getFullYear()-2016));
+	$(".timelineDate:first-child").find('.timelineYear').append((new Date).getFullYear());
+	var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
+	var currentMonth = (new Date).getMonth()
+	$(".timelineDate:first-child").find('.timelineMonth').append(monthNames[currentMonth]);
+	$(".timelineDate").each (function () {
+		var spacerCount = $(this).data('spacer');
+		if (spacerCount > 0) {
+			$(this).after("<div class='timelineSpacer'><div class='leftCap'></div><div class='rightCap'></div><div class='midCap'></div></div>")
+			$('.timelineSpacer:last').width ((spacerCount*57)+30);
+		}
+	})
+}
+function timelineCheck () {
+	var timelinePoint = $('#timelineMarker').offset().left + ($('#timelineMarker').width()*.5);
+	if (timelinePoint <= $('#timeline').offset().left || timelinePoint >= $('#timeline').offset().left+$('#timeline').width()) {
+		$('.job').removeClass('focused').removeClass('delay');
+	} else {
+		$('.timelineSpacer').each (function() {
+			if ($(this).is('.timelineSpacer:first')) {
+				var leftSide = $('.timelineDate').width();
+				var rightSide = $('.timelineDate').width() * .5;
+			} else if ($(this).is('.timelineSpacer:last')) {
+				var leftSide = $('.timelineDate').width() * .5;
+				var rightSide = $('.timelineDate').width();
+			} else {
+				var leftSide = $('.timelineDate').width() * .5;
+				var rightSide = $('.timelineDate').width() * .5;
+			}
+			if ($(this).offset().left-leftSide < timelinePoint && ($(this).offset().left + $(this).width()) + rightSide > timelinePoint ) {
+				jobPosition = $(this).index('.timelineSpacer');
+				$('.timelineSpacer').removeClass('focused');
+				$('.timelineDate').removeClass('focused');
+				$(this).addClass ('focused');
+				$(this).prev().addClass ('focused');
+				$(this).next().addClass ('focused');
+				$('.job').removeClass('delay');
+				if ($('.job').hasClass('focused')) {
+					$('#job'+jobPosition).addClass('delay');
+				}
+				$('.job').removeClass('focused');
+				$('#job'+jobPosition).addClass('focused');
+			}
+		});
+	}
+}
+
+function navLinks () {
+	$('#nav_welcomeIcon').click (function () {
+		scrollToPoint(null);
+	});
+	$('#nav_professionalIcon').click (function () {
+		scrollToPoint('#professionalIntrospace');
+	});
+	$('#introScrollDown').click (function () {
+		scrollToPoint('#professionalIntrospace');
+	});
+	$('#nav_gotIcon').click (function () {
+		scrollToPoint('#gotPlaceholder');
+	});
+	$('#nav_lotroIcon').click (function () {
+		scrollToPoint('#lotroPlaceholder');
+	});
+	$('#nav_ddoIcon').click (function () {
+		scrollToPoint('#ddoPlaceholder');
+	});
+	$('#nav_icIcon').click (function () {
+		scrollToPoint('#icPlaceholder');
+	});
+	$('#nav_personalIcon').click (function () {
+		scrollToPoint('#personalIntrospace');
+	});
+	$('#nav_gallery1').click (function () {
+		scrollToPoint('#grid1Placeholder');
+	});
+	$('#nav_gallery2').click (function () {
+		scrollToPoint('#grid2Placeholder');
+	});
+	$('#nav_gallery3').click (function () {
+		scrollToPoint('#grid3Placeholder');
+	});
+	$('#nav_gallery4').click (function () {
+		scrollToPoint('#grid4Placeholder');
+	});
+	$('#nav_qualificationIcon').click (function () {
+		scrollToPoint('#experienceIntrospace');
+	});
+	$('#nav_workExperience').click (function () {
+		scrollToPoint('#timelineAnchor');
+	});
+	$('#nav_skills').click (function () {
+		scrollToPoint('#skillsPlaceholder');
+	});
+	$('#nav_software').click (function () {
+		scrollToPoint('#softwarePlaceholder');
+	});
+}
+
+function scrollToPoint(targetDiv) {
+	if (targetDiv == null) {
+		var targetPoint = 0;
+	} else {
+		var targetPoint = $(targetDiv).offset().top + (($(targetDiv).height()*.5)-($(window).height()*.5));
+	}
+	var distance = Math.round(Math.abs(targetPoint - $(document).scrollTop())*.5);
+	var scrollSpeed = 1000 + (distance*.5);
+	$("body, html").animate({
+		scrollTop: targetPoint
+	}, scrollSpeed);
+}
+
+function navCheck () {
+	if ($(document).scrollTop() + $(window).height() > $('#softwarePlaceholder').offset().top) {
+		var selectedNav = '#nav_software';
+	} else if ($(document).scrollTop() + $(window).height() > $('#skillsPlaceholder').offset().top) {
+		var selectedNav = '#nav_skills';
+	} else if ($(document).scrollTop() + $(window).height() > $('#timelineAnchor').offset().top) {
+		var selectedNav = '#nav_workExperience';
+	} else if ($(document).scrollTop() + $(window).height() > $('#experienceIntrospace').offset().top) {
+		var selectedNav = '#nav_qualificationIcon';
+	} else if ($(document).scrollTop() + $(window).height() > $('#grid4Placeholder').offset().top) {
+		var selectedNav = '#nav_gallery4';
+	} else if ($(document).scrollTop() + $(window).height() > $('#grid3Placeholder').offset().top) {
+		var selectedNav = '#nav_gallery3';
+	} else if ($(document).scrollTop() + $(window).height() > $('#grid2Placeholder').offset().top) {
+		var selectedNav = '#nav_gallery2';
+	} else if ($(document).scrollTop() + $(window).height() > $('#grid1Placeholder').offset().top) {
+		var selectedNav = '#nav_gallery1';
+	} else if ($(document).scrollTop() + $(window).height() > $('#personalIntrospace').offset().top) {
+		var selectedNav = '#nav_personalIcon';
+	} else if ($(document).scrollTop() + $(window).height() > $('#icPlaceholder').offset().top) {
+		var selectedNav = '#nav_icIcon';
+	} else if ($(document).scrollTop() + $(window).height() > $('#ddoPlaceholder').offset().top) {
+		var selectedNav = '#nav_ddoIcon';
+	} else if ($(document).scrollTop() + $(window).height() > $('#lotroPlaceholder').offset().top) {
+		var selectedNav = '#nav_lotroIcon';
+	} else if ($(document).scrollTop() + $(window).height() > $('#gotPlaceholder').offset().top) {
+		var selectedNav = '#nav_gotIcon';
+	} else if ($(document).scrollTop() + $(window).height() > $('#professionalIntrospace').offset().top) {
+		var selectedNav = '#nav_professionalIcon';
+	} else {
+		var selectedNav = '#nav_welcomeIcon';
+	}
+	if ($(selectedNav).hasClass ('selected') == false) {
+		$('#logo').removeClass()
+		if (selectedNav == '#nav_welcomeIcon') {
+			$('#logo').addClass ('intro');
+		} else if (selectedNav == '#nav_professionalIcon' || selectedNav == '#nav_gotIcon' || selectedNav == '#nav_lotroIcon' || selectedNav == '#nav_ddoIcon' || selectedNav == '#nav_icIcon') {
+			$('#logo').addClass ('professional');
+		} else if (selectedNav == '#nav_personalIcon'  || selectedNav == '#nav_gallery1') {
+			$('#logo').addClass ('personal');
+		} else {
+			$('#logo').addClass ('experience');
+		}
+		$('.navItem').removeClass('selected');
+		$(selectedNav).addClass('selected');
+	}
 }
